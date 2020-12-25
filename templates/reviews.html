@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marshal Pundit Review</title>
+</head>
+<body>
+    {% for review in reviews %}
+        {{ review.book_name }}<br>
+        {{ review.author_name }}<br>
+        {{ review.genre_name }}<br>
+        {{ review.book_review }}<br>
+        {{ review.star_rating }}<br>
+        {{ review.published_date }}<br>
+        {{ review.url_link }}<br>
+    {% endfor %}
+</body>
+</html>
