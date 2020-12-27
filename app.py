@@ -59,7 +59,8 @@ def profile(username):
 
 @app.route("/add_review")
 def add_review():
-    return render_template("add_review.html")
+    genres = mongo.db.genres.find().sort("genre_name", 1)
+    return render_template("add_review.html", genres=genres)
 
 
 if __name__ == "__main__":
