@@ -57,6 +57,11 @@ def profile(username):
     return render_template("profile.html", username=username)
 
 
+@app.route("/add_review")
+def add_review():
+    return render_template("add_review.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
