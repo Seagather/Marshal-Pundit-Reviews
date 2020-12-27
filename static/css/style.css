@@ -31,3 +31,15 @@
 .logo img {
 	width: 100%;
 }
+.collapsible-header {
+    line-height: 1.9;
+}
+blockquote{
+    border-style: solid;
+    border-radius: 20px;
+    border-color:#37474f;
+    padding: 25px;
+}
+.jumbotron {
+    background: none;
+}

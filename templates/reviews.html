@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-{% for review in reviews %}
+<!-- {% for review in reviews %}
 {{ review.book_name }}<br>
 {{ review.author_name }}<br>
 {{ review.genre_name }}<br>
@@ -9,22 +9,35 @@
 {{ review.star_rating }}<br>
 {{ review.published_date }}<br>
 {{ review.url_link }}<br>
-{% endfor %}
+{% endfor %} -->
 
  <ul class="collapsible">
-        <li>
-            <div class="collapsible-header white-text blue-grey darken-4 text-shadow"><i class="fas fa-caret-down"></i>First</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-            <div class="collapsible-header white-text blue-grey darken-4 text-shadow"><i class="fas fa-caret-down"></i>Second</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-            <div class="collapsible-header white-text blue-grey darken-4 text-shadow"><i class="fas fa-caret-down"></i>Third</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-    </ul>
-
+    {% for review in reviews %}
+    <li>
+        <div class="collapsible-header white-text blue-grey darken-4 text-shadow">
+            <i class="fas fa-caret-down"></i>
+            <strong>{{ review.book_name }}</strong> &nbsp;&nbsp; <em>Author by : {{ review.author_name }}</em> 
+            {% if review.star_rating == "on" %} 
+                <i class="fas fa-star amber-text text-accent-4 tooltipped"
+                    data-position="right" data-tooltip="1"></i>
+                <i class="fas fa-star amber-text text-accent-4 tooltipped"
+                    data-position="right" data-tooltip="2"></i>
+                    <i class="fas fa-star amber-text text-accent-4 tooltipped"
+                    data-position="right" data-tooltip="3"></i>
+                    <i class="fas fa-star amber-text text-accent-4 tooltipped"
+                    data-position="right" data-tooltip="4"></i>
+                    <i class="fas fa-star amber-text text-accent-4 tooltipped"
+                    data-position="right" data-tooltip="5"></i>
+            {% endif %}
+        </div>
+        <div class="collapsible-body">
+            <strong>{{ review.genre_name }}</strong>
+            <p><blockquote class="jumbotron bg-transparent">{{ review.book_review }}</blockquote></p>
+            <p>{{ review.url_link }}</p>
+            <p><em>Published : {{ review.published_date }}</em></p>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
 
 {% endblock %}
