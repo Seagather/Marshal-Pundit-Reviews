@@ -34,7 +34,7 @@
 .collapsible-header {
     line-height: 1.9;
 }
-blockquote{
+blockquote { 
     border-style: solid;
     border-radius: 20px;
     border-color:#37474f;
@@ -42,4 +42,10 @@ blockquote{
 }
 .jumbotron {
     background: none;
+}
+.picker__box {
+    background-color:#ccc;
+}
+.picker-date-display {
+    background-color:#37474f !important;
 }
