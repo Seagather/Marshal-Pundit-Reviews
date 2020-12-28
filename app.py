@@ -57,8 +57,24 @@ def profile(username):
     return render_template("profile.html", username=username)
 
 
-@app.route("/add_review")
+@app.route("/add_review", methods=["GET", "POST"])
 def add_review():
+    if request.method == "POST":
+        star_rating = "on" if request.form.getlist("star_rating") else "off"
+        review = {
+            "genre_name": request.form.get("genre_name"),
+            "book_name": request.form.get("book_name"),
+            "author_name": request.form.get("author_name"),
+            "book_review": request.form.get("book_review"),
+            "star_rating": star_rating,
+            "published_date": request.form.get("published_date"),
+            "url_link": request.form.get("url_link"),
+            "created_by": session["user"]
+        }
+        mongo.db.reviews.insert_one(review)
+        flash("Book Successfully Added")
+        return redirect(url_for("get_reviews"))
+
     genres = mongo.db.genres.find().sort("genre_name", 1)
     return render_template("add_review.html", genres=genres)
 
