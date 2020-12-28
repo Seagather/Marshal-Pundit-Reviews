@@ -3,24 +3,33 @@
 
 <h3 class="blue-grey-text text-darken-4 center-align">Book Reviews</h3>
 
- <ul class="collapsible">
+{% if tasks|length > 0 %} 
+<ul class="collapsible">
     {% for review in reviews %}
     <li>
         <div class="collapsible-header white-text blue-grey darken-4 text-shadow">
-            <i class="fas fa-caret-down"></i>
-            <strong>{{ review.book_name }}</strong> &nbsp;&nbsp; <em>Author by : {{ review.author_name }}</em> 
-            {% if review.star_rating == "on" %} 
-                <i class="fas fa-star amber-text text-accent-4 tooltipped"
-                    data-position="right" data-tooltip="1"></i>
-                <i class="fas fa-star amber-text text-accent-4 tooltipped"
-                    data-position="right" data-tooltip="2"></i>
+            <div class="col s3">
+                <i class="fas fa-caret-down"></i>
+                {% if session.user|lower == task.created_by|lower %}
+                    <a href="{{ url_for('delete_task', task_id=task._id) }}" class="btn-small green accent-4">Done</a>
+                    <a href="{{ url_for('edit_task', task_id=task._id) }}" class="btn-small blue-grey lighten-1">Edit</a>
+                {% endif %}
+            </div>
+            <div class="col s9">
+                <strong>{{ review.book_name }}</strong> &nbsp;&nbsp; <em>Author by : {{ review.author_name }}</em> 
+                {% if review.star_rating == "on" %} 
                     <i class="fas fa-star amber-text text-accent-4 tooltipped"
-                    data-position="right" data-tooltip="3"></i>
+                        data-position="right" data-tooltip="1"></i>
                     <i class="fas fa-star amber-text text-accent-4 tooltipped"
-                    data-position="right" data-tooltip="4"></i>
+                        data-position="right" data-tooltip="2"></i>
                     <i class="fas fa-star amber-text text-accent-4 tooltipped"
-                    data-position="right" data-tooltip="5"></i>
-            {% endif %}
+                        data-position="right" data-tooltip="3"></i>
+                    <i class="fas fa-star amber-text text-accent-4 tooltipped"
+                        data-position="right" data-tooltip="4"></i>
+                    <i class="fas fa-star amber-text text-accent-4 tooltipped"
+                        data-position="right" data-tooltip="5"></i>
+                {% endif %}
+            </div>
         </div>
         <div class="collapsible-body">
             <strong>{{ review.genre_name }}</strong>
