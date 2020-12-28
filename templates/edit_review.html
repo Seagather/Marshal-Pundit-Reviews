@@ -10,9 +10,13 @@
 				<div class="input-field col s12">
                     <i class="fas fa-folder-open prefix blue-grey-text text-darken-4"></i>
 					<select id="genre_name" name="genre_name" class="validate" required>
-                        <option value="" disabled selected>Choose Genre</option>
+                        <option value="" disabled>Choose Genre</option>
                         {% for genre in genres %}
-                            <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+                            {% if genre.genre_name == review.genre_name %}
+                                <option value="{{ genre.genre_name }}" selected>{{ genre.genre_name }}</option>
+                            {% else %}
+                                <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
 					<label for="genre_name">Review Genre</label>
@@ -23,7 +27,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix blue-grey-text text-darken-4"></i>
                     <input id="book_name" name="book_name" minlength="3" maxlength="20"
-                        type="text" class="validate" required>
+                        value="{{ review.book_name }}" type="text" class="validate" required>
                     <label for="book_name">Book Name</label>
                 </div>
             </div>
@@ -32,7 +36,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-user-circle prefix blue-grey-text text-darken-4"></i>
                     <input id="author_name" name="author_name" minlength="5" maxlength="20"
-                        type="text" class="validate" required>
+                        value="{{ review.author_name }}" type="text" class="validate" required>
                     <label for="author_name">Author Name</label>
                 </div>
             </div>
@@ -41,7 +45,9 @@
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix blue-grey-text text-darken-4"></i>
                     <textarea id="book_review" name="book_review" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required></textarea>
+                        maxlength="200" class="materialize-textarea validate" required>
+                        {{- review.book_review -}}
+                    </textarea>
                     <label for="book_review">Reviewers' Comments</label>
                 </div>
             </div>
@@ -49,7 +55,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt prefix blue-grey-text text-darken-4"></i>
-                    <input id="published_date" name="published_date" type="text" class="datepicker validate" required>
+                    <input id="published_date" name="published_date" type="text" 
+                        value="{{ review.published_date }}" class="datepicker validate" required>
                     <label for="published_date">Published Date</label>
                 </div>
             </div>
@@ -58,7 +65,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-link prefix blue-grey-text text-darken-4"></i>
                     <input id="url_link" name="url_link" minlength="5" maxlength="50"
-                        type="text" class="validate" required>
+                        value="{{ review.url_link }}" type="text" class="validate" required>
                     <label for="url_link">Cover Link</label>
                 </div>
             </div>
@@ -68,7 +75,11 @@
 					<div class="switch">
                         <i class="fas fa-star prefix amber-text text-accent-4"></i>
 						<label for="star_rating">
-                            <input type="checkbox" id="star_rating" name="star_rating">
+                            {% if review.star_rating == "on" %}
+                                <input type="checkbox" id="star_rating" name="star_rating" checked>
+                            {% else %}
+                                <input type="checkbox" id="star_rating" name="star_rating">
+                            {% endif %}
                             <span class="lever"></span>
                             Ratings
                         </label>
@@ -90,6 +101,10 @@
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
+                    <!-- cancel button -->
+                    <a href="{{ url_for('get_reviews') }}" class="btn-large red text-shadow">
+                        Cancel <i class="fas fa-times-circle right"></i>
+                    </a>
                     <button type="submit" class="btn-large waves-effect waves-light blue-grey darken-1 text-shadow">
                         Edit Review <i class="fas fa-edit right"></i>
                     </button>
