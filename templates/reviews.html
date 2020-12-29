@@ -35,6 +35,7 @@
                 <p><blockquote class="jumbotron bg-transparent">{{ review.book_review }}</blockquote></p>
                 <p>{{ review.url_link }}</p>
                 <p><em>Published : {{ review.published_date }}</em></p>
+                <p><em>by: {{ review.created_by }}</em></p>
             </div>
         </li>
         {% endfor %}
