@@ -73,31 +73,59 @@
 			<div class="row">
 				<div class="input-field col s12">
 					<div class="switch">
-                        <i class="fas fa-star prefix amber-text text-accent-4"></i>
+                        <!-- <i class="fas fa-star fa-lg prefix amber-text text-accent-4"></i> -->
 						<label for="star_rating">
                             {% if review.star_rating == "on" %}
                                 <input type="checkbox" id="star_rating" name="star_rating" checked>
                             {% else %}
-                                <input type="checkbox" id="star_rating" name="star_rating">
+                                <input type="checkbox" id="star_rating" name="star_rating" checked>
                             {% endif %}
                             <span class="lever"></span>
-                            Ratings
+                            Rating-1
+						</label>
+                        <!-- <i class="fas fa-star fa-lg prefix amber-text text-accent-4"></i> -->
+						<label for="star_rating2">
+                            {% if review.star_rating2 == "on" %}
+                                <input type="checkbox" id="star_rating2" name="star_rating2" checked>
+                            {% else %}
+                                <input type="checkbox" id="star_rating2" name="star_rating2" checked>
+                            {% endif %}
+                            <span class="lever"></span>
+                            Rating-2
+                        </label>
+                        <!-- <i class="fas fa-star fa-lg prefix amber-text text-accent-4"></i> -->
+						<label for="star_rating3">
+                            {% if review.star_rating3 == "on" %}
+                                <input type="checkbox" id="star_rating3" name="star_rating3" checked>
+                            {% else %}
+                                <input type="checkbox" id="star_rating3" name="star_rating3" checked>
+                            {% endif %}
+                            <span class="lever"></span>
+                            Rating-3
+                        </label>
+                        <!-- <i class="fas fa-star fa-lg prefix amber-text text-accent-4"></i> -->
+						<label for="star_rating4">
+                            {% if review.star_rating4 == "on" %}
+                                <input type="checkbox" id="star_rating4" name="star_rating4" checked>
+                            {% else %}
+                                <input type="checkbox" id="star_rating4" name="star_rating4" checked>
+                            {% endif %}
+                            <span class="lever"></span>
+                            Rating-4
+                        </label>
+                        <!-- <i class="fas fa-star fa-lg prefix amber-text text-accent-4"></i> -->
+						<label for="star_rating5">
+                            {% if review.star_rating5 == "on" %}
+                                <input type="checkbox" id="star_rating5" name="star_rating5" checked>
+                            {% else %}
+                                <input type="checkbox" id="star_rating5" name="star_rating5" checked>
+                            {% endif %}
+                            <span class="lever"></span>
+                            Rating-5
                         </label>
 					</div>
 				</div>
             </div>
-            <div class="row">
-				<div class="input-field col s12">
-					<div class="switch">
-                        <i class="fas fa-star prefix amber-text text-accent-4"></i>
-						<label for="star_rating-1">
-                            <input type="checkbox" id="star_rating-1" name="star_rating">
-                            <span class="lever"></span>
-                            Ratings
-                        </label>
-					</div>
-				</div>
-			</div>
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">

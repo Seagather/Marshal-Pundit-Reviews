@@ -110,12 +110,20 @@ def logout():
 def add_review():
     if request.method == "POST":
         star_rating = "on" if request.form.get("star_rating") else "off"
+        star_rating2 = "on" if request.form.get("star_rating2") else "off"
+        star_rating3 = "on" if request.form.get("star_rating3") else "off"
+        star_rating4 = "on" if request.form.get("star_rating4") else "off"
+        star_rating5 = "on" if request.form.get("star_rating5") else "off"
         review = {
             "genre_name": request.form.get("genre_name"),
             "book_name": request.form.get("book_name"),
             "author_name": request.form.get("author_name"),
             "book_review": request.form.get("book_review"),
             "star_rating": star_rating,
+            "star_rating2": star_rating2,
+            "star_rating3": star_rating3,
+            "star_rating4": star_rating4,
+            "star_rating5": star_rating5,
             "published_date": request.form.get("published_date"),
             "url_link": request.form.get("url_link"),
             "created_by": session["user"]
@@ -133,12 +141,20 @@ def edit_review(review_id):
 
     if request.method == "POST":
         star_rating = "on" if request.form.get("star_rating") else "off"
+        star_rating2 = "on" if request.form.get("star_rating2") else "off"
+        star_rating3 = "on" if request.form.get("star_rating3") else "off"
+        star_rating4 = "on" if request.form.get("star_rating4") else "off"
+        star_rating5 = "on" if request.form.get("star_rating5") else "off"
         submit = {
             "genre_name": request.form.get("genre_name"),
             "book_name": request.form.get("book_name"),
             "author_name": request.form.get("author_name"),
             "book_review": request.form.get("book_review"),
             "star_rating": star_rating,
+            "star_rating2": star_rating2,
+            "star_rating3": star_rating3,
+            "star_rating4": star_rating4,
+            "star_rating5": star_rating5,
             "published_date": request.form.get("published_date"),
             "url_link": request.form.get("url_link"),
             "created_by": session["user"]
@@ -201,5 +217,5 @@ def delete_genre(genre_id):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
             
