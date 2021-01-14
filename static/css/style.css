@@ -31,6 +31,15 @@
 .logo >img {
 	width: 100%;
 }
+.caption {
+	font-family: Georgia;
+	font-weight: normal;
+	font-style: italic;
+    margin: 10px;
+    margin-bottom: 10px;
+	text-shadow: 2px 2px #000;
+	font-size: 38px;
+}
 .collapsible-header {
     line-height: 1.9;
 }
@@ -68,13 +77,16 @@ td.is-selected.is-today {
     margin: 5px;
     line-height: 42px;
 }
+.collapsible-body {
+    background-color: #121315;
+}
 .ratings {
     display: inline-block;
-    padding-left: 3em;
+    /* padding-left: 3em; */
     text-shadow: 0 0 4px #000;
 }
 .book {
-    display: block;
+    display: inline;
     padding-left:2em;
 }
 .lever .switch {
@@ -153,6 +165,9 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    /* background-color:#eceff1; */
+    background-color:#000000;
+    color: blanchedalmond;
   }
 
 main {
