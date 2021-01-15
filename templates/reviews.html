@@ -77,12 +77,34 @@
                 </div> -->
             </div>
             <div class="collapsible-body">
+                <div id="container">
+                    <div id="left">
+                        <a>
+                        <img src="{{review.url_link}}" alt="Forest" style="width:150px">
+                        </a>
+                    </div>
+                    <div id="right">
                 <strong>{{ review.genre_name }}</strong>
                 <p><blockquote class="jumbotron bg-transparent">{{ review.book_review }}</blockquote></p>
-                <p><a href= "link/{{ review.url_link }}">Page link</a></p>
+                <!-- <p><a href= "link/{{ review.url_link }}">Page link</a></p> -->
                 <p><em>Published : {{ review.published_date }}</em></p>
                 <p><em>by: {{ review.created_by }}</em></p>
-                <div class="ratings flow-text">
+                <p><a href="{{review.amazon_link}}" class="btn-small blue-grey lighten-1">Buy</a></p>
+                    </div>
+                </div>
+                    {% if review.star_rating == "on" %} 
+                        <i class="fas fa-star amber-text text-accent-4 tooltipped"
+                            data-position="right" data-tooltip="1"></i>
+                        <i class="fas fa-star amber-text text-accent-4 tooltipped"
+                            data-position="right" data-tooltip="2"></i>
+                        <i class="fas fa-star amber-text text-accent-4 tooltipped"
+                            data-position="right" data-tooltip="3"></i>
+                        <i class="fas fa-star amber-text text-accent-4 tooltipped"
+                            data-position="right" data-tooltip="4"></i>
+                        <i class="fas fa-star amber-text text-accent-4 tooltipped"
+                            data-position="right" data-tooltip="5"></i>
+                    {% endif %}
+                <!-- <div class="ratings flow-text">
                     {% if review.star_rating == "on" %} 
                         <i class="fas fa-star fa-lg amber-text text-accent-4 tooltipped"
                             data-position="right" data-tooltip="1"></i>
@@ -118,7 +140,7 @@
                         <i class="fas fa-star fa-lg grey-text text-lighten-5 tooltipped"
                             data-position="right" data-tooltip="5"></i>
                     {% endif %}
-                </div>
+                </div> -->
             </div>
         </li>
         {% endfor %}
