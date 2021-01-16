@@ -257,6 +257,20 @@ def get_reviews():
     # if session["user"]:
     if not session.get("user") is None:
         reviews = list(mongo.db.reviews.find())
+        upvotes = list(mongo.db.upvotes.find(
+            {"user_name": session.get("user")}))
+        # print('rev', reviews)
+        # print('up', upvotes)
+        i = 0
+
+        for rev in reviews:
+            for up in upvotes:
+
+                if up["review_id"] == str(rev["_id"]):
+                    reviews[i]['upvote'] = up['state']
+                    break
+            i = i+1
+        #print('end', reviews)
         return render_template("reviews.html", reviews=reviews)
 
     return redirect(url_for("login"))
@@ -379,7 +393,8 @@ def add_review():
             "published_date": request.form.get("published_date"),
             "url_link": request.form.get("url_link"),
             "amazon_link": amazon_link,
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "upvotes": 0
         }
         mongo.db.reviews.insert_one(review)
         flash("Book Successfully Added")
@@ -389,9 +404,62 @@ def add_review():
     return render_template("add_review.html", genres=genres)
 
 
+@app.route("/upvote/<review_id>", methods=["GET", "POST"])
+def upvote(review_id):
+    print('r ', review_id)
+    if request.method == "GET":
+        review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+        upvote = mongo.db.upvotes.find_one(
+            {"review_id": str(review_id), "user_name": session["user"]})
+        # print('vote', upvote)
+
+        if upvote:
+            count = review["upvotes"]
+
+            state = False
+            if upvote["state"] is False:
+
+                state = True
+                count += 1
+                print('c1', count)
+            else:
+
+                state = False
+                count -= 1
+                print('c2', count)
+
+            review["upvotes"] = count
+            upvote["state"] = state
+            # print('final ', review)
+            mongo.db.upvotes.update({"_id": upvote["_id"]}, upvote)
+            mongo.db.reviews.update(
+                {"_id": ObjectId(review_id)}, review)
+
+            flash("Review Successfully voted")
+            return redirect(url_for("get_reviews"))
+
+        else:
+            count = review["upvotes"]
+            count += 1
+
+            up = {
+                "review_id": review_id,
+                "user_name": session["user"],
+                "state": True
+
+            }
+
+            review["upvotes"] = count
+
+            mongo.db.upvotes.insert_one(up)
+            mongo.db.reviews.update(
+                {"_id": ObjectId(review_id)}, review)
+            flash("Review Successfully voted")
+            return redirect(url_for("get_reviews"))
+
+
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
-
     if request.method == "POST":
         star_rating = "on" if request.form.get("star_rating") else "off"
         star_rating2 = "on" if request.form.get("star_rating2") else "off"
@@ -487,6 +555,3 @@ if __name__ == "__main__":
             port=int(os.environ.get("PORT")),
             debug=False)
 
-    # app.run(host="localhost",
-    #         port=4000,
-    #         debug=True)

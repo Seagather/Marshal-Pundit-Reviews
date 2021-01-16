@@ -95,8 +95,17 @@ td.is-selected.is-today {
 .published-date, .created-by {
     margin-top: 2%;
 }
-.genre {
+.genre, .votes {
      margin-top: 2%;
+}
+.up-vote {
+    color: #00c853;
+}
+.down-vote {
+    color: #f44336;
+}
+.vote-counts {
+    display: inline;
 }
 .book {
     display: inline;
@@ -221,8 +230,17 @@ main {
     width: 20%;
 }
 @media (max-width: 992px) {
-	.caption,
-	.book-title {
+	.caption {
 		font-size: 1.1rem;
+	}
+}
+@media (max-width: 992px) {
+	.book-title {
+		font-size: 0.7rem;
+	}
+}
+@media (max-width: 992px) {
+	.author {
+		font-size: 0.6rem;
 	}
 }
