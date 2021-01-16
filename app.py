@@ -348,6 +348,10 @@ def logout():
 def add_review():
     if request.method == "POST":
         star_rating = "on" if request.form.get("star_rating") else "off"
+        star_rating2 = "on" if request.form.get("star_rating2") else "off"
+        star_rating3 = "on" if request.form.get("star_rating3") else "off"
+        star_rating4 = "on" if request.form.get("star_rating4") else "off"
+        star_rating5 = "on" if request.form.get("star_rating5") else "off"
         #  create amazon link
         name = request.form.get("book_name")
         name_array = name.split(" ")
@@ -368,6 +372,10 @@ def add_review():
             "author_name": request.form.get("author_name"),
             "book_review": request.form.get("book_review"),
             "star_rating": star_rating,
+            "star_rating2": star_rating2,
+            "star_rating3": star_rating3,
+            "star_rating4": star_rating4,
+            "star_rating5": star_rating5,
             "published_date": request.form.get("published_date"),
             "url_link": request.form.get("url_link"),
             "amazon_link": amazon_link,
@@ -386,14 +394,37 @@ def edit_review(review_id):
 
     if request.method == "POST":
         star_rating = "on" if request.form.get("star_rating") else "off"
+        star_rating2 = "on" if request.form.get("star_rating2") else "off"
+        star_rating3 = "on" if request.form.get("star_rating3") else "off"
+        star_rating4 = "on" if request.form.get("star_rating4") else "off"
+        star_rating5 = "on" if request.form.get("star_rating5") else "off"
+        #  create amazon link
+        name = request.form.get("book_name")
+        name_array = name.split(" ")
+        k = ''  # k is the search query
+        for obj in name_array:
+            # if item in name array is not empty add to k
+            if obj != ' ':
+                if k == '':   # if k is empty done add '+'
+                    k = k + obj
+                else:
+                    k = k + "+" + obj
+
+        amazon_link = "https://www.amazon.com/s?tag=patrickfaketag384909&k=" + k
+
         submit = {
             "genre_name": request.form.get("genre_name"),
             "book_name": request.form.get("book_name"),
             "author_name": request.form.get("author_name"),
             "book_review": request.form.get("book_review"),
             "star_rating": star_rating,
+            "star_rating2": star_rating2,
+            "star_rating3": star_rating3,
+            "star_rating4": star_rating4,
+            "star_rating5": star_rating5,
             "published_date": request.form.get("published_date"),
             "url_link": request.form.get("url_link"),
+            "amazon_link": amazon_link,
             "created_by": session["user"]
         }
         mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
@@ -454,7 +485,7 @@ def delete_genre(genre_id):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
 
     # app.run(host="localhost",
     #         port=4000,

@@ -45,7 +45,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix blue-grey-text text-darken-4"></i>
                     <textarea id="book_review" name="book_review" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required>
+                        maxlength="1000" class="materialize-textarea validate" required>
                         {{- review.book_review -}}
                     </textarea>
                     <label for="book_review">Reviewers' Comments</label>
@@ -64,7 +64,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-link prefix blue-grey-text text-darken-4"></i>
-                    <input id="url_link" name="url_link" minlength="5" maxlength="50"
+                    <input id="url_link" name="url_link" minlength="5" maxlength="500"
                         value="{{ review.url_link }}" type="text" class="validate" required>
                     <label for="url_link">Cover Link</label>
                 </div>
