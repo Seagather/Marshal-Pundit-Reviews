@@ -31,7 +31,7 @@
                 <div class="col s3 flow-text">
                     <i class="fas fa-caret-down"></i>
                     {% if session.user|lower == review.created_by|lower %}
-                        <div><a href="{{ url_for('delete_review', review_id=review._id) }}" data-target="modal1" class="btn-small btn modal-trigger green accent-4">Done</a>    
+                        <div><a href="{{ url_for('delete_review', review_id=review._id) }}" data-target="delete" class="btn-small btn modal-trigger green accent-4">Done</a>    
                     <!-- <div><a class="btn-small green accent-4" id="{{review._id}}" onclick="pop(this.id)">Delete</a> -->
                         <a href="{{ url_for('edit_review', review_id=review._id) }}" class="btn-small blue-grey lighten-1">Edit</a></div>
                     {% endif %}
@@ -40,7 +40,7 @@
   <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
 
                 <!-- Modal Structure -->
-                <div id="modal1" class="modal to-delete">
+                <div id="delete" class="modal to-delete">
                 <div class="modal-content center-align">
                  <i class="fas fa-exclamation-circle fa-5x"></i>
                 <h4 class="modal-text">Are you sure ?</h4>
@@ -59,15 +59,15 @@
                 
             </div>
             <div class="collapsible-body">
-                <div id="container">
-                    <div id="left">
+                <!-- <div class="row"> -->
+                <div class="row review-container">
+                    <div class="cover-img left-align col l4 m4 s12 center-on-small-only">
                         <a>
-                        <img class="responsive-img materialboxed cover-page" src="{{ review.url_link }}" alt="{{ review.book_name }}">
+                        <img class="responsive-img materialboxed cover-page center-align" src="{{ review.url_link }}" alt="{{ review.book_name }}">
                         </a>
                     </div>
-                    <div id="right">
-                <h5 class="genre"><strong>{{ review.genre_name }}</strong></h5>
-                <blockquote>{{ review.book_review }}</blockquote>
+                    <div class="col s8 book-details left-align">
+                <h5 class="genre"><strong>{{ review.genre_name }}</strong></h5><hr>
                 <p class="published-date"><em>Published : {{ review.published_date }}</em></p>
                 <p class="created-by"><em>by: {{ review.created_by }}</em></p>
                 <p class="purchase-link"><a href="{{review.amazon_link}}" class="btn-small blue-grey lighten-1" target="_blank"><i class="fas fa-shopping-cart"></i> Buy Online</a></p>
@@ -79,9 +79,6 @@
                     {% else %} 
                         <a href="{{ url_for('upvote', review_id=review._id) }}" class="up-vote"><i class="fas fa-thumbs-up"></i> Like</a>
                     {% endif %}
-                </div>
-                   
-                </div>
                 </div>
                 <div class="ratings">
                     {% if review.star_rating == "on" %} 
@@ -120,6 +117,64 @@
                             data-position="right" data-tooltip="5"></i>
                     {% endif %}
                 </div>
+                   
+                </div></div>
+                    <!-- <div class="right"> -->
+                <!-- <h5 class="genre"><strong>{{ review.genre_name }}</strong></h5> -->
+                <blockquote>{{ review.book_review }}</blockquote>
+                <!-- <div class="right-align">
+                <p class="published-date"><em>Published : {{ review.published_date }}</em></p>
+                <p class="created-by"><em>by: {{ review.created_by }}</em></p>
+                <p class="purchase-link"><a href="{{review.amazon_link}}" class="btn-small blue-grey lighten-1" target="_blank"><i class="fas fa-shopping-cart"></i> Buy Online</a></p>
+                
+                <div class="votes">
+                    <div class="vote-counts"><strong>{{ review.upvotes }} likes.</strong></div>
+                    {% if review.upvote == True %} 
+                        <a href="{{ url_for('upvote', review_id=review._id) }}" class="down-vote"><i class="fas fa-thumbs-down"></i> Unlike</a>
+                    {% else %} 
+                        <a href="{{ url_for('upvote', review_id=review._id) }}" class="up-vote"><i class="fas fa-thumbs-up"></i> Like</a>
+                    {% endif %}
+                </div>
+                   
+                </div> -->
+                <!-- </div> -->
+                <!-- <div class="ratings">
+                    {% if review.star_rating == "on" %} 
+                        <i class="fas fa-star fa-lg amber-text text-accent-4 tooltipped"
+                            data-position="right" data-tooltip="1"></i>
+                    {% else %}
+                        <i class="fas fa-star fa-lg grey-text text-lighten-5 tooltipped"
+                            data-position="right" data-tooltip="1"></i>
+                    {% endif %}
+                    {% if review.star_rating2 == "on" %} 
+                        <i class="fas fa-star fa-lg amber-text text-accent-4 tooltipped"
+                            data-position="right" data-tooltip="2"></i>
+                    {% else %}
+                        <i class="fas fa-star fa-lg grey-text text-lighten-5 tooltipped"
+                            data-position="right" data-tooltip="2"></i>
+                    {% endif %}
+                    {% if review.star_rating3 == "on" %} 
+                        <i class="fas fa-star fa-lg amber-text text-accent-4 tooltipped"
+                            data-position="right" data-tooltip="3"></i>
+                    {% else %}
+                        <i class="fas fa-star fa-lg grey-text text-lighten-5 tooltipped"
+                            data-position="right" data-tooltip="3"></i>
+                    {% endif %}
+                    {% if review.star_rating4 == "on" %} 
+                        <i class="fas fa-star fa-lg amber-text text-accent-4 tooltipped"
+                            data-position="right" data-tooltip="4"></i>
+                    {% else %}
+                        <i class="fas fa-star fa-lg grey-text text-lighten-5 tooltipped"
+                            data-position="right" data-tooltip="4"></i>
+                    {% endif %}
+                    {% if review.star_rating5 == "on" %} 
+                        <i class="fas fa-star fa-lg amber-text text-accent-4 tooltipped"
+                            data-position="right" data-tooltip="5"></i>
+                    {% else %}
+                        <i class="fas fa-star fa-lg grey-text text-lighten-5 tooltipped"
+                            data-position="right" data-tooltip="5"></i>
+                    {% endif %}
+                </div> -->
             </div>
         </li>
         {% endfor %}
