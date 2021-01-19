@@ -270,7 +270,7 @@ def get_reviews():
                     reviews[i]['upvote'] = up['state']
                     break
             i = i+1
-        #print('end', reviews)
+        # print('end', reviews)
         return render_template("reviews.html", reviews=reviews)
 
     return redirect(url_for("login"))
@@ -493,7 +493,8 @@ def edit_review(review_id):
             "published_date": request.form.get("published_date"),
             "url_link": request.form.get("url_link"),
             "amazon_link": amazon_link,
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "upvotes": 0
         }
         mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
         flash("Review Successfully Updated")

@@ -7,7 +7,7 @@
 }
 .nav-item .nav-link:hover {
     color: #D05F59 !important;
-    background-color:#37474f;
+    background-color:#263238;
 }
 .nav-link {
     display: inline;
@@ -49,9 +49,6 @@ blockquote {
     border-color:#37474f;
     padding: 25px;
 }
-.jumbotron {
-    background: none;
-}
 .datepicker-date-display {
     background-color:#37474f;
 }
@@ -88,6 +85,12 @@ td.is-selected.is-today {
     /* padding-left: 3em; */
     /* text-shadow: 0 0 4px #000; */
     margin-top: 3%;
+}
+.fa-exclamation-circle {
+    margin-bottom: 7%;
+    color: red;
+    font-size: 65px !important;
+    text-align: center !important;
 }
 .purchase-link {
     margin-top: 3%;
@@ -183,6 +186,23 @@ td.is-selected.is-today {
     max-width: 100%;
     height: auto;
     object-fit: cover;
+}
+.to-delete {
+    width: 400px;
+    height: 290px;
+    color: #121315;
+}
+.modal-content {
+    color: #121315;
+}
+.modal-footer {
+    text-align: center !important;
+    margin-bottom: 7px;
+}
+.modal-footer a {
+    margin: 0 15px !important;
+    display: inline-block;
+    float: none;
 }
 body {
     display: flex;
