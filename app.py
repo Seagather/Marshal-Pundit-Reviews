@@ -378,7 +378,7 @@ def add_review():
                 else:
                     k = k + "+" + obj
 
-        amazon_link = "https://www.amazon.com/s?tag=patrickfaketag384909&k=" + k
+        amazon_link = "https://www.amazon.com/s?tag=patrickfaketag84909&k=" + k
 
         review = {
             "genre_name": request.form.get("genre_name"),
@@ -478,7 +478,7 @@ def edit_review(review_id):
                 else:
                     k = k + "+" + obj
 
-        amazon_link = "https://www.amazon.com/s?tag=patrickfaketag384909&k=" + k
+        amazon_link = "https://www.amazon.com/s?tag=patrickfaketag84909&k=" + k
 
         submit = {
             "genre_name": request.form.get("genre_name"),
@@ -521,7 +521,8 @@ def get_genres():
 def add_genre():
     if request.method == "POST":
         genre = {
-            "genre_name": request.form.get("genre_name")
+            "genre_name": request.form.get("genre_name"),
+            "created_by": session["user"]
         }
         mongo.db.genres.insert_one(genre)
         flash("New Genre Added")
@@ -534,7 +535,8 @@ def add_genre():
 def edit_genre(genre_id):
     if request.method == "POST":
         submit = {
-            "genre_name": request.form.get("genre_name")
+            "genre_name": request.form.get("genre_name"),
+            "created_by": session["user"]
         }
         mongo.db.genres.update({"_id": ObjectId(genre_id)}, submit)
         flash("Genres Successfully Updated")
