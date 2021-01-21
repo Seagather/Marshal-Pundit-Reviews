@@ -265,7 +265,7 @@ hr {
 	}
 }
 @media (max-width: 992px) {
-	.book-title {
+	.book-title, .btn-small {
 		font-size: 0.7rem;
 	}
 }
