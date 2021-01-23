@@ -66,3 +66,57 @@ $(document).ready(function () {
 });
 
 
+$('.rating-star').on('click', function() {
+            $(this).parents('.rating').find('.rating-star').removeClass('checked'); // uncheck previously checked star
+
+            $(this).addClass('checked'); // check currently selected star
+
+            var ratingValue = $(this).attr('data-rating'); // get rating value
+            var ratingTarget = $(this).attr('data-target');
+
+            // set the rating value to corresponding target radio input
+            $('input[name="' + ratingTarget + '"][value="' + ratingValue + '"]').prop('checked', true);
+        });
+
+(function($) {
+	var wordCounter = {
+		init: function() {
+			this.DOM();
+			this.events();
+		},
+		DOM: function() {
+			this.textbox = $("#book_review");
+			this.wordCount = $("#wordCount");
+			this.charCount = $("#charCount");
+		},
+		events: function() {
+			this.textbox.on("input", this.count.bind(this));
+		},
+		count: function() {
+			var words = this.textbox.val().split(" "),
+				chars = this.textbox.val();
+
+			//DELETE EMPTY STRINGS
+			for (var i = 0; i < words.length; i++) {
+				while (words[i] === "") {
+					words.splice(i, 1);
+				}
+			}
+			//COUNT WORDS
+			if (words.length === 1) {
+				this.wordCount.text(words.length + " word");
+			} else {
+				this.wordCount.text(words.length + " words");
+			}
+			//COUNT CHARACTERS
+			if (chars.length < 0) {
+				words = [];
+			} else if (chars.length === 1) {
+				this.charCount.text(chars.length + " character");
+			} else {
+				this.charCount.text(chars.length + " characters");
+			}
+		}
+	}
+	wordCounter.init();
+}(jQuery));

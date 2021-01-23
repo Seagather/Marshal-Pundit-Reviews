@@ -43,6 +43,7 @@
             <!-- reviewers comment -->
             <div class="row">
                 <div class="input-field col s12">
+                    <p class="word-count">You have <span id="wordCount">0 words</span> and <span id="charCount">0 characters</span></p>
                     <i class="fas fa-align-left prefix blue-grey-text text-darken-4"></i>
                     <textarea id="book_review" name="book_review" minlength="5"
                         maxlength="1000" pattern="^[a-zA-Z0-9]{5,1000}$" class="materialize-textarea validate" required>
@@ -78,7 +79,7 @@
                             {% if review.star_rating == "on" %}
                                 <input type="checkbox" id="star_rating" name="star_rating" checked>
                             {% else %}
-                                <input type="checkbox" id="star_rating" name="star_rating" checked>
+                                <input type="checkbox" id="star_rating" name="star_rating">
                             {% endif %}
                             <span class="lever"></span>
                             Rating-1
@@ -88,7 +89,7 @@
                             {% if review.star_rating2 == "on" %}
                                 <input type="checkbox" id="star_rating2" name="star_rating2" checked>
                             {% else %}
-                                <input type="checkbox" id="star_rating2" name="star_rating2" checked>
+                                <input type="checkbox" id="star_rating2" name="star_rating2">
                             {% endif %}
                             <span class="lever"></span>
                             Rating-2
@@ -98,7 +99,7 @@
                             {% if review.star_rating3 == "on" %}
                                 <input type="checkbox" id="star_rating3" name="star_rating3" checked>
                             {% else %}
-                                <input type="checkbox" id="star_rating3" name="star_rating3" checked>
+                                <input type="checkbox" id="star_rating3" name="star_rating3">
                             {% endif %}
                             <span class="lever"></span>
                             Rating-3
@@ -108,7 +109,7 @@
                             {% if review.star_rating4 == "on" %}
                                 <input type="checkbox" id="star_rating4" name="star_rating4" checked>
                             {% else %}
-                                <input type="checkbox" id="star_rating4" name="star_rating4" checked>
+                                <input type="checkbox" id="star_rating4" name="star_rating4">
                             {% endif %}
                             <span class="lever"></span>
                             Rating-4
@@ -118,7 +119,7 @@
                             {% if review.star_rating5 == "on" %}
                                 <input type="checkbox" id="star_rating5" name="star_rating5" checked>
                             {% else %}
-                                <input type="checkbox" id="star_rating5" name="star_rating5" checked>
+                                <input type="checkbox" id="star_rating5" name="star_rating5">
                             {% endif %}
                             <span class="lever"></span>
                             Rating-5
