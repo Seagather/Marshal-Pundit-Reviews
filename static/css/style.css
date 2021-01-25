@@ -101,6 +101,7 @@ td.is-selected.is-today {
 }
 .text-muted {
      margin-bottom: 2%;
+     color: #757575;
 }
 .up-vote {
     color: #00c853;

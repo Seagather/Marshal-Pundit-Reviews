@@ -44,16 +44,16 @@ The main objective of the website is to provide users with the functionality to 
 
 Users:
 * As a first time user, I would like to create my own account with the option to login and logout so nobody else can access it.
-* As a prospective user, I want to be able to easily navigate throughout the site to find content about available flights, hotels, cars for rent and fare information
-* As a user, I want to get expert advice, plan my trip itineraries, tour packages and suitable cost about my destination.
-* As a user, I want make alternative booking arrangements or cancellation if changes arise before or during trip
-
+* As a prospective user, I want to be able to navigate throughout the site with ease to find content and access all collection of reviews in an organised format.
+* As a user, I would like to be able to add, share and see all of my inputs within the app (i.e. comments, reviews, votes).
+* As a user, I would like to search any particular book quickly using e.g. book title or author.
+* As a user I would like to be able to like or dislike any review.
+* As a user I would like to be able to edit or delete any content added by me.
+* As a user I would like to be sure that no other user is able to edit or delete my input. 
 
 Owners:
-* As a owner, I want my website to be desirable and accessible to users I want users to see what sets me apart from the competition.
-* As a owner, I want to know what my contemporaries are doing and ways to improve
-* As a owner, I want end-user feedback in shaping services to fit their needs more accurately
-* As a owner, I want users to get notifications and publications via newsletter when there are new offers
+* As a owner, I want my website to be desirable and accessible to users.
+* As a owner, I want to earn money on each book purchased via a link from the site.
 
 ## Wireframe
 The skeletal framework of this website was designed using [Balsamiq](https://balsamiq.com) as a visual guide to represent the page schematic and screen blueprint.
