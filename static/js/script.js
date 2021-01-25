@@ -65,18 +65,22 @@ $(document).ready(function () {
     }
 });
 
-
-$('.rating-star').on('click', function() {
-            $(this).parents('.rating').find('.rating-star').removeClass('checked'); // uncheck previously checked star
-
-            $(this).addClass('checked'); // check currently selected star
-
-            var ratingValue = $(this).attr('data-rating'); // get rating value
-            var ratingTarget = $(this).attr('data-target');
-
-            // set the rating value to corresponding target radio input
-            $('input[name="' + ratingTarget + '"][value="' + ratingValue + '"]').prop('checked', true);
-        });
+$(document).ready(function() {
+    // handle form submittion
+    $("form#ratingForm").submit(function(e) 
+    {
+        e.preventDefault(); // prevent the default click action from being performed
+        if ($("#ratingForm :radio:checked").length == 0) {
+            $('#status').html("nothing checked");
+            return false;
+        } else {
+            // value of selected star rating
+            var rate = $('input:radio[name=rating]:checked').val() ;
+            // console.log(rate);
+           alert("Thanks you for your review");
+        }
+    });
+});
 
 (function($) {
 	var wordCounter = {

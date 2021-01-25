@@ -43,8 +43,8 @@ The main objective of the website is to provide users with the functionality to 
 ## User Stories
 
 Users:
-* As a prospective user, I want to know about the company and what they offer/particularly appealing benefits
-* As a first time user, I want to be able to easily navigate throughout the site to find content about available flights, hotels, cars for rent and fare information
+* As a first time user, I would like to create my own account with the option to login and logout so nobody else can access it.
+* As a prospective user, I want to be able to easily navigate throughout the site to find content about available flights, hotels, cars for rent and fare information
 * As a user, I want to get expert advice, plan my trip itineraries, tour packages and suitable cost about my destination.
 * As a user, I want make alternative booking arrangements or cancellation if changes arise before or during trip
 

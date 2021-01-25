@@ -110,15 +110,19 @@
                         </div>   
                     </div>
                 </div>
-                <!-- Stars for difficulty_rating -->
-<!-- <div class="rating"> -->
-    <!-- The stars must be in reverse order of rating value -->
-    <!-- <i class="rating-star" data-rating="5" data-target="difficulty_rating"></i>
-    <i class="rating-star" data-rating="4" data-target="difficulty_rating"></i>
-    <i class="rating-star" data-rating="3" data-target="difficulty_rating"></i>
-    <i class="rating-star" data-rating="2" data-target="difficulty_rating"></i>
-    <i class="rating-star" data-rating="1" data-target="difficulty_rating"></i>
-</div> -->
+                <div id="status"></div>
+    <form id="ratingForm">
+        <fieldset class="rating">
+            <legend>Please rate:</legend>
+            <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+            <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+            <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+            <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+            <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+        </fieldset>
+        <div class="clearfix"></div>
+        <button class="submit clearfix">Submit</button>
+    </form>
                 <blockquote>{{ review.book_review }}</blockquote>
             </div>
         </li>
@@ -127,7 +131,7 @@
     {% else %}
         <h3 class="red-text text-darken-4 center-align">No Results Found</h3>
     {% endif %}
-
+    
     <!-- <script>
         function pop(review_id) {
             console.log("hhhh"+review_id)

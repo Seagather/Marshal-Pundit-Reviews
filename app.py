@@ -437,7 +437,7 @@ def upvote(review_id):
             mongo.db.reviews.update(
                 {"_id": ObjectId(review_id)}, review)
 
-            flash("Review Successfully voted")
+            flash("You 've voted this book")
             return redirect(url_for("get_reviews"))
 
         else:
