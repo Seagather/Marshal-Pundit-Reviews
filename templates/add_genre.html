@@ -10,7 +10,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-folder-open prefix blue-grey-text text-darken-4"></i>
                     <input id="genre_name" name="genre_name" minlength="3" maxlength="15"
-                        type="text" class="validate" required>
+                        type="text" pattern="^[a-zA-Z0-9']{3,15}$" title="Enter only alphanumeric characters" class="validate" required>
                     <label for="genre_name">Genre Name</label>
                 </div>
             </div>

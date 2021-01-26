@@ -38,7 +38,8 @@
     margin: 10px;
     margin-bottom: 1em;
 	text-shadow: 2px 2px#1b5e20;
-	font-size: 38px;
+    font-size: 38px;
+    margin-top: 1.5em;
 }
 .collapsible-header {
     line-height: 1.9;
@@ -219,7 +220,7 @@ body {
     /* background-color:#eceff1; */
     background-color:#000000;
     color: blanchedalmond;
-    justify-content: space-between;
+    /* justify-content: space-between; */
   }
   
 main {
@@ -281,7 +282,7 @@ hr {
 }
 @media (max-width: 992px) {
 	.caption {
-		font-size: 1.1rem;
+        font-size: 1.1rem;
 	}
 }
 @media (max-width: 992px) {
@@ -399,6 +400,6 @@ hr {
 }
 
 /* my stuff */
-#status, button {
+/* #status, button {
     margin: 20px 0;
-}
+} */
