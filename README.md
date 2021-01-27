@@ -67,6 +67,12 @@ _<div align="right"><p style="text-align: right"><a href="#top">Back to top</a><
 
 # Database
 
+MongoDB Atlas was used for this project. A leading NoSQL system in document-oriented cloud database.
+
+The functionality was generally structured to action four types of operations, known collectively by the acronym CRUD, standing for Create, Read, Update, and Delete.
+
+![dmo](static/images/dmo.png)
+
 ## Database Type
 
 
