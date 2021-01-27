@@ -69,10 +69,77 @@ _<div align="right"><p style="text-align: right"><a href="#top">Back to top</a><
 
 MongoDB Atlas was used for this project. A leading NoSQL system in document-oriented cloud database.
 
-The functionality was generally structured to action four types of operations, known collectively by the acronym CRUD, standing for Create, Read, Update, and Delete.
+The functionality was generally structured to action four types of operations, known collectively by the acronym CRUD, standing for Create, Read, Update, and Delete as shown below:
 
 ![dmo](static/images/dmo.png)
 
-## Database Type
+## Database Design
+
+The database integrates four collections, namely: users, genres, reviews and  upvotes as represented in the database schema below:
+
+![schema](static/images/schema.png)
+
+_<div align="right"><p style="text-align: right"><a href="#top">Back to top</a></p></div>_
+
+<a name="features"/>
+
+# Features
+
+## Existing Features
+
+#### Structure
+
+- **Navbar** - mobile collapse button from Materialize framework was used for the navbar which framed the brand logo and links to relevant sections namely:
+ Home, Profile, Add Review, Manage Genres, Sign Out. When the nav bar is resized, you will see that the links on the right turn into a hamburger icon, an effect of `class=sidenav-trigger` functionality. 
+
+- **Footer** - A Sticky-footer was utilized for the purpose of this project because it always stays on the bottom of the page regardless of how little content is on the page.
+The footer contains the copyright formality.
+
+#### Forms
+
+- **Register form** - This provides interface to new users for sign up.
+
+- **Log In form** - form that enable users to sign into already created account. 
+
+- **Add Review form** - contain fields that enable users to add new review to the website.
+
+- **Edit Review form** - This form retrieves existing review data for revise.
+
+- **Add Genre form** - form that enable users to add new genre to database.
+
+- **Edit Genre form** - Allows for retrieve and revise of existing genre.
+
+#### Home
+
+* The Home Page offers the - **Search bar** - which enables users to search any book by name or author.
+It contains collapsibles; accordion elements that expand when clicked on. The collapsible-header framed the caret-down, delete and edit buttons for reviews
+while the collapsible-body encapsulates the set of data stored about a particular instance of an entity.
+
+* When users get at the button of a long page, they often need to get back to the top.
+There is a Back to Top button integration with JavaScript to allow users to quickly navigate to the top of the page.
+
+#### Profile
+
+* The Profile section features exclusively for a user session. All collections per user are stored in their respective profile.
+
+#### Manage Genres
+
+The Manage Genre section comprises of cards displaying content composed of different genres.
+It allows user to add, edit and delete existing genres.
+
+#### Security
+
+* To make the user authentication more secure, the Log In form integrates werkzeug security features namely: "generate_password_hash" and "check_password_hash".
+Hashing passwords makes it tougher to crack.
+
+## Features Left to Implement
+
+* A Virtual Reality should be added for users. 
+
+_<div align="right"><p style="text-align: right"><a href="#top">Back to top</a></p></div>_
+
+<a name="technologies-used"/>
+
+
 
 
