@@ -124,7 +124,7 @@ There is a Back to Top button integration with JavaScript to allow users to quic
 
 #### Manage Genres
 
-The Manage Genre section comprises of cards displaying content composed of different genres.
+* The Manage Genre section comprises of cards displaying content composed of different genres.
 It allows user to add, edit and delete existing genres.
 
 #### Security
@@ -132,13 +132,72 @@ It allows user to add, edit and delete existing genres.
 * To make the user authentication more secure, the Log In form integrates werkzeug security features namely: "generate_password_hash" and "check_password_hash".
 Hashing passwords makes it tougher to crack.
 
+#### Word Counter
+
+* The reviewers comment input field has a word counter integrated with JavaScript.
+The counter display while typing to inform and limit users within the context of maximum length and subject matter.
+
 ## Features Left to Implement
 
-* A Virtual Reality should be added for users. 
+* Add social media links to generate traffic.
+* Reset password option
 
 _<div align="right"><p style="text-align: right"><a href="#top">Back to top</a></p></div>_
 
 <a name="technologies-used"/>
+
+# Technologies Used
+**Languages:**
+* [HTML5:](https://www.w3schools.com/html/default.asp)
+    - HTML5 was used to code the content of the website.
+* [CSS:](https://www.w3schools.com/css/default.asp)
+    - CSS3 was used to style the content.
+* [JavaScript:](https://www.w3schools.com/js/default.asp)
+    - JavaScript was used to style the significant interactive functionality.
+* [Python:](https://www.w3schools.com/python/default.asp)
+    - Python was used for the project back-end functions. Flask and Python is used to build route functions.
+
+**Tools and Libraries:**
+* [Materialize:](https://materializecss.com/)
+    - Materialize was used to create grid layout and styling various features such as navbar accordion, cards, buttons, forms, and footer to render responsive website.
+* [W3C Validator:](https://validator.w3.org/)
+    - The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to clear syntax errors.
+* [Font-Awesome:](https://fontawesome.com/)
+    - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
+* [Flask:](https://flask.palletsprojects.com/)
+    - web application framework used to create functions with Python that are injected into html templates. 
+* [jQuery:](https://jquery.com/)
+    - jQuery library was used to simplify the JavaScript.
+* [Tinypng:](https://tinypng.com)
+    - Tinypng was used to compress the file size of PNG and JPG files.
+* [GTmetrix:](https://gtmetrix.com)
+    - GTmetrix was used to run speed tests on each page.
+* [Pingdom:](https://tools.pingdom.com)
+    - Pingdom was used to run speed tests on each page.
+* [HTML and CSS Beautifier:](http://minifycode.com/html-beautifier/)
+    - HTML and CSS was used to format the codes to make it more readable.
+* [JSHint](https://jshint.com/) 
+    - Used to test/validate JavaScript Code.
+* [PEP8 Online Checker:](http://pep8online.com/)
+    - P8P was used to verify that python coding conventions were applied to meet requirements.
+* [drawio:](https://app.diagrams.net/)
+    - Diagram software used to create the database schema and data manipulation operations diagrams.
+* [Git:](https://git-scm.com/)
+    - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+
+**External Hosting:**
+* [GitHub:](https://github.com/)
+    - The project used the GitHub hosting service to save the project in a repository.
+* [MongoDB Atlas:](https://www.mongodb.com/)
+    - a document-oriented cloud database used to store manage, query and retrieve data set for the app. 
+* [Heroku:](https://www.heroku.com/)
+    - Heroku platform was used to deploy, manage, and scale the app. 
+
+
+_<div align="right"><p style="text-align: right"><a href="#top">Back to top</a></p></div>_
+
+<a name="testing"/>
+
 
 
 

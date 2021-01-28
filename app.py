@@ -460,48 +460,82 @@ def upvote(review_id):
             return redirect(url_for("get_reviews"))
 
 
-@app.route("/edit_review/<review_id>", methods=["GET", "POST"])
+# @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
+# def edit_review(review_id):
+#     if request.method == "POST":
+#         star_rating = "on" if request.form.get("star_rating") else "off"
+#         star_rating2 = "on" if request.form.get("star_rating2") else "off"
+#         star_rating3 = "on" if request.form.get("star_rating3") else "off"
+#         star_rating4 = "on" if request.form.get("star_rating4") else "off"
+#         star_rating5 = "on" if request.form.get("star_rating5") else "off"
+#         #  create amazon link
+#         name = request.form.get("book_name")
+#         name_array = name.split(" ")
+#         k = ''  # k is the search query
+#         for obj in name_array:
+#             # if item in name array is not empty add to k
+#             if obj != ' ':
+#                 if k == '':   # if k is empty done add '+'
+#                     k = k + obj
+#                 else:
+#                     k = k + "+" + obj
+
+#         amazon_link = "https://www.amazon.com/s?tag=patrickfaketag84909&k=" + k
+
+#         submit = {
+#             "genre_name": request.form.get("genre_name"),
+#             "book_name": request.form.get("book_name"),
+#             "author_name": request.form.get("author_name"),
+#             "book_review": request.form.get("book_review"),
+#             "star_rating": star_rating,
+#             "star_rating2": star_rating2,
+#             "star_rating3": star_rating3,
+#             "star_rating4": star_rating4,
+#             "star_rating5": star_rating5,
+#             "published_date": request.form.get("published_date"),
+#             "url_link": request.form.get("url_link"),
+#             "amazon_link": amazon_link,
+#             "created_by": session["user"],
+#             "upvotes": 0
+#         }
+#         mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
+#         flash("Review Successfully Updated")
+
+#     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+#     genres = mongo.db.genres.find().sort("genre_name", 1)
+#     return render_template("edit_review.html", review=review, genres=genres)
+
+
+@ app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+
     if request.method == "POST":
+        print(review)
+        print(str(request.form['book_name']))
         star_rating = "on" if request.form.get("star_rating") else "off"
         star_rating2 = "on" if request.form.get("star_rating2") else "off"
         star_rating3 = "on" if request.form.get("star_rating3") else "off"
         star_rating4 = "on" if request.form.get("star_rating4") else "off"
         star_rating5 = "on" if request.form.get("star_rating5") else "off"
-        #  create amazon link
-        name = request.form.get("book_name")
-        name_array = name.split(" ")
-        k = ''  # k is the search query
-        for obj in name_array:
-            # if item in name array is not empty add to k
-            if obj != ' ':
-                if k == '':   # if k is empty done add '+'
-                    k = k + obj
-                else:
-                    k = k + "+" + obj
-
-        amazon_link = "https://www.amazon.com/s?tag=patrickfaketag84909&k=" + k
-
         submit = {
-            "genre_name": request.form.get("genre_name"),
-            "book_name": request.form.get("book_name"),
-            "author_name": request.form.get("author_name"),
-            "book_review": request.form.get("book_review"),
+            "genre_name": request.form["genre_name"],
+            "book_name": request.form["book_name"],
+            "author_name": request.form["author_name"],
+            "book_review": request.form["book_review"],
             "star_rating": star_rating,
             "star_rating2": star_rating2,
             "star_rating3": star_rating3,
             "star_rating4": star_rating4,
             "star_rating5": star_rating5,
-            "published_date": request.form.get("published_date"),
-            "url_link": request.form.get("url_link"),
-            "amazon_link": amazon_link,
-            "created_by": session["user"],
-            "upvotes": 0
+            "published_date": request.form["published_date"]
         }
-        mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
+        mongo.db.reviews.update_one({"_id": ObjectId(review_id)}, {
+                                    "$set": submit})
         flash("Review Successfully Updated")
 
-    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+        return redirect(url_for("get_reviews"))
+
     genres = mongo.db.genres.find().sort("genre_name", 1)
     return render_template("edit_review.html", review=review, genres=genres)
 

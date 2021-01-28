@@ -75,8 +75,7 @@ $(document).ready(function() {
             return false;
         } else {
             // value of selected star rating
-            var rate = $('input:radio[name=rating]:checked').val() ;
-            // console.log(rate);
+            var rate = $('input[name=rating]:checked').val() ;
            alert("Thanks you for your review");
         }
     });
@@ -124,3 +123,13 @@ $(document).ready(function() {
 	}
 	wordCounter.init();
 }(jQuery));
+
+$.ajax({
+      type: 'POST',
+      url: "/add_rating",
+      data: {book_id: 10, rating: 3},
+      dataType: "text",
+      success: function(data){
+                 alert("rating added");
+               }
+    });
