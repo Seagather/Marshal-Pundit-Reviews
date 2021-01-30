@@ -296,6 +296,11 @@ hr {
 	}
 }
 @media (max-width: 992px) {
+	.input-field label {
+		font-size: 0.7rem;
+	}
+}
+@media (max-width: 992px) {
 	.cover-img {
         object-position: center;
         text-align: center;
