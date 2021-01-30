@@ -65,22 +65,6 @@ $(document).ready(function () {
     }
 });
 
-$(document).ready(function() {
-    // handle form submittion
-    $("form#ratingForm").submit(function(e) 
-    {
-        e.preventDefault(); // prevent the default click action from being performed
-        if ($("#ratingForm :radio:checked").length == 0) {
-            $('#status').html("nothing checked");
-            return false;
-        } else {
-            // value of selected star rating
-            var rate = $('input[name=rating]:checked').val() ;
-           alert("Thanks you for your review");
-        }
-    });
-});
-
 (function($) {
 	var wordCounter = {
 		init: function() {
@@ -124,12 +108,21 @@ $(document).ready(function() {
 	wordCounter.init();
 }(jQuery));
 
-$.ajax({
-      type: 'POST',
-      url: "/add_rating",
-      data: {book_id: 10, rating: 3},
-      dataType: "text",
-      success: function(data){
-                 alert("rating added");
-               }
-    });
+var $star_rating = $('.star-rating .fa');
+
+var SetRatingStar = function() {
+  return $star_rating.each(function() {
+    if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
+      return $(this).removeClass('fa-star-o').addClass('fa-star');
+    } else {
+      return $(this).removeClass('fa-star').addClass('fa-star-o');
+    }
+  });
+};
+
+$star_rating.on('click', function() {
+  $star_rating.siblings('input.rating-value').val($(this).data('rating'));
+  return SetRatingStar();
+});
+
+SetRatingStar();
