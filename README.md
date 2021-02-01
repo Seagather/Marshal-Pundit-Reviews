@@ -287,7 +287,6 @@ We cannot host a Python project on GitHub Pages it only allows us to host static
 Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 
 **Note:** It's important to contained our environment variables within a hidden env.py file which should never be pushed to GitHub by ensuring .gitignore has it secured.
-to create your env.py file where you store your sensitive data
 
 ## Heroku
 
@@ -307,7 +306,9 @@ I used the Heroku command-line interface, within the Terminal:
 * To install Heroku, I typed: `npm install -g heroku`
 * I typed the login command: `heroku login -i` then login with my already created account details.
 
-# Connect Git remote : we can either link our local Git repository with Heroku, or setup Automatic
+# Connect Git remote
+
+we can either link our local Git repository with Heroku, or setup Automatic
 Deployment from GitHub.
 
 To link the local Git repository to Heroku:
@@ -394,5 +395,4 @@ Code was modified to better fit my needs.
 * Special thanks to [Felipe Alarcon](https://github.com/felipe-alarcon), I appreciate more than you' ll ever know
 * Most sincere appreciation to my fellow students and Support team at Code Institute for their immeasurable feedback.
 
-
-
+_<div align="right"><p style="text-align: right"><a href="#top">Back to top</a></p></div>_
