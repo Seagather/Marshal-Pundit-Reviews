@@ -97,21 +97,21 @@ The footer contains the copyright formality.
 
 #### Forms
 
-- **Register form** - This provides interface to new users for sign up.
+- **Register form**: This provides interface to new users for sign up.
 
-- **Log In form** - form that enable users to sign into already created account. 
+- **Log In form**: form that enable users to sign into already created account. 
 
-- **Add Review form** - contain fields that enable users to add new review to the website.
+- **Add Review form**: contain fields that enable users to add new review to the website.
 
-- **Edit Review form** - This form retrieves existing review data for revise.
+- **Edit Review form**: This form retrieves existing review data for revise.
 
-- **Add Genre form** - form that enable users to add new genre to database.
+- **Add Genre form**: form that enable users to add new genre to database.
 
-- **Edit Genre form** - Allows for retrieve and revise of existing genre.
+- **Edit Genre form**: Allows for retrieve and revise of existing genre.
 
 #### Home
 
-* The Home Page offers the - **Search bar** - which enables users to search any book by name or author.
+* The Home Page offers the **Search bar** which filter books based on the user's query (i.e by name or author)
 It contains collapsibles; accordion elements that expand when clicked on. The collapsible-header framed the caret-down, delete and edit buttons for reviews
 while the collapsible-body encapsulates the set of data stored about a particular instance of an entity.
 
@@ -120,12 +120,13 @@ There is a Back to Top button integration with JavaScript to allow users to quic
 
 #### Profile
 
-* The Profile section features exclusively for a user session. All collections per user are stored in their respective profile.
+* The Profile section features exclusively for a user session. 
+All collections per user are stored in their respective profile Page and secure to only be available to Account owner
 
 #### Manage Genres
 
 * The Manage Genre section comprises of cards displaying content composed of different genres.
-It allows user to add, edit and delete existing genres.
+It allows user to add, edit and delete existing genres. but make it secure to only be available to the Account owner.
 
 #### Security
 
@@ -201,7 +202,7 @@ _<div align="right"><p style="text-align: right"><a href="#top">Back to top</a><
 
 Throughout the development process of this project, Chrome DevTools was used for testing variations and simulation of mobile devices.
 The Database Creation with MongoDB Atlas and Heroku deployment was very easy because I followed the well implemented course in code institute module.
-To validated my Flask pages, I opened each page and right-click to select the - **View Page Source** - option (on Chrome), then copy the populated code and paste into Markup Validator. 
+To validated my Flask pages, I opened each page and right-click to select the **View Page Source** option (on Chrome), then copy the populated code and paste into Markup Validator. 
 This was necessary to avoid all errors and warnings related to Jinja templates syntax as they are not recognised by the HTML validator.
 
 ![flask-page-test](static/images/flask-page-test.png)
@@ -216,8 +217,8 @@ Website was tested on [GTmetrix](https://gtmetrix.com) and [Pingdom](https://too
 
 Users:
 * As a first time user, I would like to create my own account with the option to login and logout so nobody else can access it.
-    - The - **Register form** - provides an interface for first time users to sign up.
-    - Upon successful registration, user can now login with the - **Log In form** - into the already created account.
+    - The **Register form** provides an interface for first time users to sign up.
+    - Upon successful registration, user can now login with the **Log In form** into the already created account.
     - To make the user authentication more secure, the Log In form integrates werkzeug security features namely: "generate_password_hash" and "check_password_hash".
       Hashing passwords makes it tougher to crack.
     
@@ -228,25 +229,26 @@ Users:
       making finding and reviewing a particular instances of data easier while allowing you to hide content that is not immediately relevant to the user.
 
 * As a user, I would like to be able to add, share and see all of my inputs within the app (i.e. comments, reviews, votes)
-    - Users can make use of the - **Add Review form** - by clicking - **Add review** - option in the navbar menu.
+    - Users can make use of the **Add Review form** by clicking **Add review** option in the navbar menu.
     - Users can write comments about any book and upvote (depicted with green thumbs-up icon) or downvote (depicted with red thumbs-down icon)
     - Submitted review and votes can be view by all other users.
 
 * As a user, I would like to search any particular book quickly using book title or author.
-    - The Home Page offers the - **Search bar** - which enables users to search any book by name or author.
+    - The Home Page offers the **Search bar** which enables users to search any book by name or author.
 
 * As a user I would like to be able to like or dislike any review.
     - Users can like any review by clicking the green thumbs-up icon or dislike by clicking the red thumbs-down icon.
     - When users like or dislike any review, the page reloads to show upvote or downvote counts respectively.
   
 * As a user I would like to be able to edit or delete any content added by me.
-    - Each relevant section provides - **Edit/Delete buttons** - which allow users to revise or delete reviews they added.
-    - The - **Delete buttons** - has a pre-warning pop up modal to alert users of their action.
+    - Each relevant section provides **Edit/Delete buttons** which allow users to revise or delete reviews they added.
+    - The **Delete buttons** has a pre-warning pop up modal to alert users of their action.
 
 * As a user I would like to be sure that no other user is able to edit or delete my input.
     - Only authenticated user can edit and delete their content. 
-      The - **Edit/Delete buttons** - appears only on content created per user.
+      The **Edit/Delete buttons** appears only on content created per user.
     - The authentication is more secure with hashing making it tougher for hackers to brute-force.
+    - Users are only permitted to edit and delete their own reviews, but not any of the reviews submitted by others.
 
 Owners:
 * As a owner, I want my website to be desirable and accessible to users.
@@ -254,7 +256,7 @@ Owners:
      strategically positioned and escalated to desired sections serves to interact with users to determine travel needs and preferences.
 
 * As a owner, I want to earn money on each book purchased via a link from the site.
-    - The - **Buy Online button** - redirect users to amazon site for each review where they can place a purchase order.
+    - The **Buy Online button** redirect users to amazon site for each review where they can place a purchase order.
 
 ## Further Testing
 
@@ -266,6 +268,7 @@ Owners:
 * The buttons links as expected and the modal form pops up in sync.
 * The Search bar generates corresponding feedback data.
 * All Codes passed through their respective Validators to erase syntax error.
+* To prevent arbitrary code from running and security flaw, after the development stage, I specify the **debug=False** before submission.
 
 ## Bugs
 
@@ -275,67 +278,121 @@ _<div align="right"><p style="text-align: right"><a href="#top">Back to top</a><
 
 <a name="deployment"/>
 
+# Deployment
 
-Before we create our Heroku application, we need to setup some files that Heroku needs
-to run the app.
-First, we need to tell Heroku which applications and dependencies are required to run our app:
-"pip3 freeze --local > requirements.txt".
-Next, the Procfile is what Heroku looks for to know which file runs the app, and how to
-run it, so we'll use the echo command: "echo web: python app.py > Procfile".
-Remember that the Procfile has a capital 'P', and no file extension.
-We can check that the files were created successfully, and as you can see, the requirements.txt file
-lists the dependencies that are needed for Flask.
-One of these is called Werkzeug, which we'll learn more about later when setting up User
-Authentication on our project.
-The Procfile might add a blank line at the bottom, and sometimes this can cause problems
-when running our app on Heroku, so just delete that line and save the file.
-Let's head over to Heroku.com, and once you're logged in on your dashboard, we can click
-to 'Create a New App'.
-If you recall from our previous lessons, the Heroku app must be unique, and generally use
-a 'dash' or 'minus' instead of spaces, and all lowercase letters.
-I'm going to call my app "flask-task-manager-project", which means that's no longer available for
-you to use, so try something similar, perhaps try including your name.
-Next, select the region closest to you, and since I'm in Ireland, I'll select Europe,
-then click 'Create App'.
-In order to connect our app, we can do one of a few different options.
-As you've learned from the previous project using Heroku, we could use the Heroku CLI
-to connect our app using the steps outlined below.
-However, to simplify the process, we'll setup Automatic Deployment from our GitHub repository.
-Make sure your GitHub profile is displayed, then add your repository name, which I've
-named exactly the same as my Heroku app, then click 'Search'.
-Once it finds your repo, click to connect to this app.
-Before we click to Enable Automatic Deployment, we still have a few more steps to do, otherwise
-we'll get unwanted application errors.
-Since we've contained our environment variables within a hidden env.py file, Heroku won't
-be able to read those variables.
-Click on the 'Settings' tab for your app, and then click on 'Reveal Config Vars', where
-we can securely tell Heroku which variables are required.
-Our env.py file contains a few different variables.
-Make sure not to include any "quotes" for the key, or the value.
-The first variable is IP, with the value of 0.0.0.0.
-Next, the PORT, which is 5000.
-For the SECRET_KEY, let's copy that from the env.py file, then paste it into Heroku.
-We don't have the MONGO_URI string yet, so we'll leave that blank for now.
-Finally, the MONGO_DBNAME is the name of our database, so task_manager.
-Let's go back to the 'Deploy' tab, but before we connect it, we need to push our two new
-files to the repository.
-Back within the terminal, I've typed 'git status' just to confirm that those are the
-only pending changes.
-Add the requirements file to the staging area: "git add requirements.txt".
-Then commit the file: "git commit -m "Add requirements.txt".
-Next, add the Procfile: "git add Procfile".
-Then commit that file as well: "git commit -m "Add Procfile".
-Finally, "git push" in order to send those files to GitHub.
-When we head back over to Heroku, we can now safely 'Enable Automatic Deployment', as everything
-should be available on our repository.
-I've only got the main branch for the project, so click 'Deploy Branch'.
-Heroku will now receive the code from GitHub, and start building the app using our required
-packages.
-That should take a minute to build, and hopefully once it's done, you'll also see "Your app
-was successfully deployed."
-Click "View" to launch your new app.
-Wonderful, the deployed site is now available, and should automatically update whenever we
-push changes to the GitHub repository.
+## Github
+
+This site was developed on GitPod, using git and GitHub to host the repository.
+We cannot host a Python project on GitHub Pages it only allows us to host static websites..
+Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+
+**Note:** It's important to contained our environment variables within a hidden env.py file which should never be pushed to GitHub by ensuring .gitignore has it secured.
+to create your env.py file where you store your sensitive data
+
+## Heroku
+
+When deploying Marshal Pundit Review using Heroku platform, the following steps were taken:
+
+# Create A Heroku App
+
+* Navigated to [Heroku.com](https://www.heroku.com/) in web browser. Once there, clicked on "Sign Up" and created a new account.
+* Chose 'Python' as Primary Development Language.
+* Selected "**Create new app**" from the Heroku dashboard.
+* Filled in the unique app name on the form and selected corresponding region, then clicked on "**Create app**"
+
+# Install Heroku CLI
+
+I used the Heroku command-line interface, within the Terminal:
+
+* To install Heroku, I typed: `npm install -g heroku`
+* I typed the login command: `heroku login -i` then login with my already created account details.
+
+# Connect Git remote : we can either link our local Git repository with Heroku, or setup Automatic
+Deployment from GitHub.
+
+To link the local Git repository to Heroku:
+
+* I typed: `git status` to check the current state of the repository.
+* I typed: `git init` to initialize empty repository (If repository not created already)
+* I typed: `git add -A` to add all the files to staging area.
+* I typed: `git commit -m "Deployment to Heroku"` to commit changes.
+* Then, I typed: `git push -u heroku main` to push code directly to Heroku.
+
+# Adding A requirements.txt File
+
+To add the list of Python dependencies that the project needs in order to run successfully and detect the language:
+
+* I typed: `pip3 freeze --local > requirements.txt` command in the terminal to create a requirements.txt file, 
+* Then I typed: `git add -A` 
+* Followed by `git commit -m "Add requirements.txt"` to commit changes.
+* Finally: `git push -u heroku main` to push file to Heroku.
+
+# Adding A Procfile
+
+To inform Heroku on how to run the application and which file runs it the **Procfile** was installed:
+
+* I typed `echo web: python app.py > Procfile` with a capital 'P' command in the terminal to redirect the echo command.
+* Then I typed: `git add Procfile`, 
+* Followed by: `git commit -m "Add Procfile` 
+* Finally: `git push` to push code to Heroku.
+
+# Creating default environment variables
+
+To add any hidden environment variables, or Config Vars, within our App Settings: 
+
+* Selected **Settings** on Heroku dashboard.
+* clicked on **Reveal Config Vars** button.
+* Add the key of **"IP"** and the value of **"0.0.0.0"**, and click on Add.
+* Add the key of **"PORT"** and the value of **"5000"**, then click Add.
+* Add the key of **"SECRET_KEY"** and the value of **"your secret key string here"**, then click Add.
+* Add the key of **"MONGO_URI"** and the value of **"mongo URI string here"**
+* Finally, add the key of **"MONGO_DBNAME"** and the value of **"the name of your database here"**.
+
+# Setting-up Automatic Deployment from GitHub
+
+To setup Automatic Deployment from GitHub:
+
+* Selected **Deploy** on Heroku dashboard.
+* Clicked on **Connect to GitHub** button.
+* Ensure my GitHub profile is displayed, then add my repository name (same as my Heroku App), and clicked search.
+* Clicked **connect** button once it finds my repo.
+* We can now safely **Enable Automatic Deploymentconnect**.
+* Selected branch and clicked **Deploy Branch** button.
+* Once it's done, you'll see "Your App was successfully deployed!!!.
+* Click "**View**" to launch your new app. The deployed site is now available.
+
+## Running Marshal Pundit Reviews Locally
+Cloning Marshal Pundit Reviews from GitHub:
+
+* Navigate to '/Seagather/Marshal-Pundit-Reviews'.
+* Click the green 'Clone or Download' button.
+* Copy the url in the dropdown box.
+* Open up your preferred terminal on any IDE of your choice. 
+* Navigate to your desired file location.
+* Copy the following code and paste to your terminal to clone Marshal Travel Agency.
+
+```
+ git clone https://github.com/Seagather/Marshal-Pundit-Reviews.git 
+
+```
+
+# Credits
+
+## Code
+* Inspiration and base code was derived from the Mini Project section of the [Code Institute](https://courses.codeinstitute.net/) course.
+Code was modified to better fit my needs. 
+
+## Content
+* Reviews, book information and comments are based on two main sources, namely [amazon](https://www.amazon.com/) and [goodreads](https://www.goodreads.com/).
+
+## Media
+* [Am I Responsive:](http://ami.responsivedesign.is/) used for UX Image section
+* [Unsplash:](https://unsplash.com/) for website images.
+* [LogoMaker:](https://logomaker.com) was used for the logo design.
+
+## Acknowledgements
+* Special thanks to [Felipe Alarcon](https://github.com/felipe-alarcon), I appreciate more than you' ll ever know
+* Most sincere appreciation to my fellow students and Support team at Code Institute for their immeasurable feedback.
 
 
 
