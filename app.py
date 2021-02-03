@@ -238,6 +238,23 @@ def upvote(review_id):
             return redirect(url_for("get_reviews"))
 
 
+@ app.route("/rate_review", methods=["POST"])
+def rate_review(review_id):
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+
+    if request.method == "POST":
+        print(review)
+        print(str(request.form['book_name']))
+        submit = {
+            "rating": request.form["rate"]
+        }
+        mongo.db.reviews.update_one({"_id": ObjectId(review_id)}, {
+                                    "$set": submit})
+        flash("Review Successfully Updated")
+
+        return redirect(url_for("get_reviews"))
+
+
 @ app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})

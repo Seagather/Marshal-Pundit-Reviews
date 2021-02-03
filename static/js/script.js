@@ -126,3 +126,30 @@ $star_rating.on('click', function() {
 });
 
 SetRatingStar();
+
+
+$(document).ready(function() {
+    // handle form submittion
+    $("form#ratingForm").submit(function(e) 
+    {
+        e.preventDefault(); // prevent the default click action from being performed
+        if ($("#ratingForm :radio:checked").length == 0) {
+            $('#status').html("nothing checked");
+            return false;
+        } else {
+            // value of selected star rating
+            var rate = $('input:radio[name=rating]:checked').val() ;
+            console.log(rate);
+           alert("Thank you for your review");
+
+            var url = "http://"+window.location.host+"/rate_review/"+ratingForm
+            $.post(url,
+                {
+                    rate: rate,
+                },
+                function(data, status){
+                    alert("Data: " + data + "\nStatus: " + status);
+                }); 
+        }
+    });
+});

@@ -376,6 +376,8 @@ Cloning Marshal Pundit Reviews from GitHub:
  git clone https://github.com/Seagather/Marshal-Pundit-Reviews.git 
 
 ```
+_<div align="right"><p style="text-align: right"><a href="#top">Back to top</a></p></div>_
+
 
 # Credits
 

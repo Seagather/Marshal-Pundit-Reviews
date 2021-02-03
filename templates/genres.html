@@ -21,7 +21,6 @@
                     <div class="card-action">
                     {% if session.user|lower == genre.created_by|lower %}
                         <a href="{{ url_for('edit_genre', genre_id=genre._id) }}" class="btn green accent-4">Edit</a>
-                        <!-- <a href="{{ url_for('delete_genre', genre_id=genre._id) }}" class="btn blue-grey lighten-1">Delete</a> -->
                         <a class="btn btn modal-trigger blue-grey lighten-1" data-target="{{genre._id}}">Delete</a>
                     {% endif %}
                     </div>
