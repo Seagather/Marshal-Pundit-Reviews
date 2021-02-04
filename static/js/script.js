@@ -142,7 +142,7 @@ $(document).ready(function() {
             console.log(rate);
            alert("Thank you for your review");
 
-            var url = "http://"+window.location.host+"/rate_review/"+ratingForm
+            var url = "https://"+window.location.host+"/rate_review/"+ratingForm
             $.post(url,
                 {
                     rate: rate,
