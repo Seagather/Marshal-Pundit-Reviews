@@ -130,10 +130,10 @@ SetRatingStar();
 
 $(document).ready(function() {
     // handle form submittion
-    $("form").submit(function(e) 
+    $("form#ratingForm").submit(function(e) 
     {
         e.preventDefault(); // prevent the default click action from being performed
-        if ($(this).val("ratingForm :radio:checked").length == 0) {
+        if ($("#ratingForm :radio:checked").length == 0) {
             $('#status').html("nothing checked");
             return false;
         } else {
