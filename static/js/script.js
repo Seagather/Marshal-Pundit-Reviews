@@ -108,24 +108,24 @@ $(document).ready(function () {
 	wordCounter.init();
 }(jQuery));
 
-var $star_rating = $('.star-rating .fa');
+// var $star_rating = $('.star-rating .fa');
 
-var SetRatingStar = function() {
-  return $star_rating.each(function() {
-    if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
-      return $(this).removeClass('fa-star-o').addClass('fa-star');
-    } else {
-      return $(this).removeClass('fa-star').addClass('fa-star-o');
-    }
-  });
-};
+// var SetRatingStar = function() {
+//   return $star_rating.each(function() {
+//     if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
+//       return $(this).removeClass('fa-star-o').addClass('fa-star');
+//     } else {
+//       return $(this).removeClass('fa-star').addClass('fa-star-o');
+//     }
+//   });
+// };
 
-$star_rating.on('click', function() {
-  $star_rating.siblings('input.rating-value').val($(this).data('rating'));
-  return SetRatingStar();
-});
+// $star_rating.on('click', function() {
+//   $star_rating.siblings('input.rating-value').val($(this).data('rating'));
+//   return SetRatingStar();
+// });
 
-SetRatingStar();
+// SetRatingStar();
 
 
 $(document).ready(function() {
@@ -139,17 +139,8 @@ $(document).ready(function() {
         } else {
             // value of selected star rating
             var rate = $('input:radio[name=rating]:checked').val() ;
-            console.log(rate);
-           alert("Thank you for your review");
-
-            var url = "https://"+window.location.host+"/rate_review/"+ratingForm
-            $.post(url,
-                {
-                    rate: rate,
-                },
-                function(data, status){
-                    alert("Data: " + data + "\nStatus: " + status);
-                }); 
+            // console.log(rate);
+           alert("Thanks for your review"); 
         }
     });
 });

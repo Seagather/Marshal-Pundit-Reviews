@@ -142,10 +142,6 @@ def logout():
 def add_review():
     if request.method == "POST":
         star_rating = "on" if request.form.get("star_rating") else "off"
-        star_rating2 = "on" if request.form.get("star_rating2") else "off"
-        star_rating3 = "on" if request.form.get("star_rating3") else "off"
-        star_rating4 = "on" if request.form.get("star_rating4") else "off"
-        star_rating5 = "on" if request.form.get("star_rating5") else "off"
         #  create amazon link
         name = request.form.get("book_name")
         name_array = name.split(" ")
@@ -166,10 +162,6 @@ def add_review():
             "author_name": request.form.get("author_name"),
             "book_review": request.form.get("book_review"),
             "star_rating": star_rating,
-            "star_rating2": star_rating2,
-            "star_rating3": star_rating3,
-            "star_rating4": star_rating4,
-            "star_rating5": star_rating5,
             "published_date": request.form.get("published_date"),
             "url_link": request.form.get("url_link"),
             "amazon_link": amazon_link,
@@ -238,21 +230,21 @@ def upvote(review_id):
             return redirect(url_for("get_reviews"))
 
 
-@ app.route("/rate_review", methods=["POST"])
-def rate_review(review_id):
-    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+# @ app.route("/rate_review/<review_id>", methods=["POST"])
+# def rate_review(review_id):
+#     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
 
-    if request.method == "POST":
-        print(review)
-        print(str(request.form['book_name']))
-        submit = {
-            "rating": request.form["rate"]
-        }
-        mongo.db.reviews.update_one({"_id": ObjectId(review_id)}, {
-                                    "$set": submit})
-        flash("Review Successfully Updated")
+#     if request.method == "POST":
+#         print(review)
+#         print(str(request.form['book_name']))
+#         submit = {
+#             "rating": request.form["rate"]
+#         }
+#         mongo.db.reviews.update_one({"_id": ObjectId(review_id)}, {
+#                                     "$set": submit})
+#         flash("Review Successfully Updated")
 
-        return redirect(url_for("get_reviews"))
+#         return redirect(url_for("get_reviews"))
 
 
 @ app.route("/edit_review/<review_id>", methods=["GET", "POST"])
@@ -263,20 +255,12 @@ def edit_review(review_id):
         print(review)
         print(str(request.form['book_name']))
         star_rating = "on" if request.form.get("star_rating") else "off"
-        star_rating2 = "on" if request.form.get("star_rating2") else "off"
-        star_rating3 = "on" if request.form.get("star_rating3") else "off"
-        star_rating4 = "on" if request.form.get("star_rating4") else "off"
-        star_rating5 = "on" if request.form.get("star_rating5") else "off"
         submit = {
             "genre_name": request.form["genre_name"],
             "book_name": request.form["book_name"],
             "author_name": request.form["author_name"],
             "book_review": request.form["book_review"],
             "star_rating": star_rating,
-            "star_rating2": star_rating2,
-            "star_rating3": star_rating3,
-            "star_rating4": star_rating4,
-            "star_rating5": star_rating5,
             "published_date": request.form["published_date"]
         }
         mongo.db.reviews.update_one({"_id": ObjectId(review_id)}, {
