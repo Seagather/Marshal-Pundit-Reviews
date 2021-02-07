@@ -141,7 +141,7 @@ def logout():
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
     if request.method == "POST":
-        star_rating = "on" if request.form.get("star_rating") else "off"
+        star_rating = True if request.form.get("star_rating") else False
         #  create amazon link
         name = request.form.get("book_name")
         name_array = name.split(" ")
@@ -254,7 +254,7 @@ def edit_review(review_id):
     if request.method == "POST":
         print(review)
         print(str(request.form['book_name']))
-        star_rating = "on" if request.form.get("star_rating") else "off"
+        star_rating = True if request.form.get("star_rating") else False
         submit = {
             "genre_name": request.form["genre_name"],
             "book_name": request.form["book_name"],

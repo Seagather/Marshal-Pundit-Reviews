@@ -80,17 +80,17 @@
                             {% endif %}
                         </div>
                         
-                        <div id="status">
-                    <form id="ratingForm">
+                        <div id="status-{{review._id}}">
+                    <form id="ratingForm-{{review._id}}" action="">
                         <div class="ratings">
                        
                         <fieldset class="rating">
                             <legend>Please rate:</legend>
-                                <input type="radio" id="star5" name="rating" value="5" required><label for="star5" title="Rocks!">5 stars</label>
-                                <input type="radio" id="star4" name="rating" value="4" required><label for="star4" title="Pretty good">4 stars</label>
-                                <input type="radio" id="star3" name="rating" value="3" required><label for="star3" title="Meh">3 stars</label>
-                                <input type="radio" id="star2" name="rating" value="2" required><label for="star2" title="Kinda bad">2 stars</label>
-                                <input type="radio" id="star1" name="rating" value="1" required><label for="star1" title="Sucks big time">1 star</label>
+                            <input type="radio" id="star5-{{review._id}}" name="rating" value="5" required><label for="star5-{{review._id}}" title="Rocks!">5 stars</label>
+                            <input type="radio" id="star4-{{review._id}}" name="rating" value="4" required><label for="star4-{{review._id}}" title="Pretty good">4 stars</label>
+                            <input type="radio" id="star3-{{review._id}}" name="rating" value="3" required><label for="star3-{{review._id}}" title="Meh">3 stars</label>
+                            <input type="radio" id="star2-{{review._id}}" name="rating" value="2" required><label for="star2-{{review._id}}" title="Kinda bad">2 stars</label>
+                            <input type="radio" id="star1-{{review._id}}" name="rating" value="1" required><label for="star1-{{review._id}}" title="Sucks big time">1 star</label>
                         </fieldset>
                 
                         <div class="clearfix">
@@ -101,31 +101,7 @@
                     </form>
                     </div>
                     </div>
-                </div>
-
-    <!-- <div class="star-rating"> 
-  <span class="fa fa-star-o" data-rating="1"></span>
-  <span class="fa fa-star-o" data-rating="2"></span>
-  <span class="fa fa-star-o" data-rating="3"></span>
-  <span class="fa fa-star-o" data-rating="4"></span>
-  <span class="fa fa-star-o" data-rating="5"></span>
-  <input type="hidden" name="whatever" class="rating-value" value="0">
-</div> -->
-                <!-- <div id="status">
-                    <form id="ratingForm">
-                        <fieldset class="rating">
-                            <legend>Please rate:</legend>
-                                <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
-                                <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
-                                <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
-                                <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
-                                <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
-                        </fieldset>
-                        <div class="clearfix sub">
-                        <button class="submit clearfix">Submit</button>
-                        <a class="btn-small green accent-4 clearfix">Submit</a>  
-                    </div>
-                    </form></div> -->
+                </div>                    
                 <blockquote>{{ review.book_review }}</blockquote>
             </div>
         </li>

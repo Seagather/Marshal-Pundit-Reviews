@@ -108,40 +108,41 @@ $(document).ready(function () {
 	wordCounter.init();
 }(jQuery));
 
-// var $star_rating = $('.star-rating .fa');
-
-// var SetRatingStar = function() {
-//   return $star_rating.each(function() {
-//     if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
-//       return $(this).removeClass('fa-star-o').addClass('fa-star');
-//     } else {
-//       return $(this).removeClass('fa-star').addClass('fa-star-o');
-//     }
-//   });
-// };
-
-// $star_rating.on('click', function() {
-//   $star_rating.siblings('input.rating-value').val($(this).data('rating'));
-//   return SetRatingStar();
-// });
-
-// SetRatingStar();
-
-
 $(document).ready(function() {
-    // handle form submittion
-    $("form#ratingForm").submit(function(e) 
-    {
-        e.preventDefault(); // prevent the default click action from being performed
-        if ($("#ratingForm :radio:checked").length == 0) {
-            $('#status').html("nothing checked");
-            return false;
-        } else {
-            // value of selected star rating
-            var rate = $('input:radio[name=rating]:checked').val() ;
-            // console.log(rate);
-           alert("Thanks for your review"); 
-        }
+    $("input[name='rating']").on("click", function() {
+        $(this).prop("checked", true);
     });
+
+            var url = "https://"+window.location.host+"/rate_review/"+review._id
+            $.post(url,
+                {
+                    rate: rate,
+                },
+                function(data, status){
+                    alert("Data: " + data + "\nStatus: " + status);
+                });
+    // handle form submittion
+    // $("form#ratingForm").submit(function(e) 
+    // {
+        // e.preventDefault(); // prevent the default click action from being performed
+        // if ($("#ratingForm :radio:checked").length == 0) {
+            // $('#status').html("nothing checked");
+            // return false;
+        // } else {
+            // value of selected star rating
+            // var rate = $('input:radio[name=rating]:checked').val() ;
+            // console.log(rate);
+        //    alert("Thanks for your review"); 
+        // }
+    // });
+                
+                var url = "http://"+window.location.host+"/rate_review/"+review._id
+            $.post(url,
+                {
+                    rate: rate,
+                },
+                function(data, status){
+                    alert("Data: " + data + "\nStatus: " + status);
+                });
 });
 
