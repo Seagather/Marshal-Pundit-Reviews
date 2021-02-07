@@ -60,7 +60,7 @@ The skeletal framework of this website was designed using [Balsamiq](https://bal
 
 Links to final version of the wireframe can be found below:
 
-![Wireframe Final Version](static/wireframes/marshal-pundit-wireframe.pdf)
+* [Wireframe Final Version](static/wireframes/marshal-pundit-wireframe.pdf)
 
 _<div align="right"><p style="text-align: right"><a href="#top">Back to top</a></p></div>_
 
