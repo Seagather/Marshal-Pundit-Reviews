@@ -20,7 +20,7 @@ $(document).ready(function(){
 
 // back-to-top-button            
 var btn = $('#button');
-$(document).ready(function () {
+// $(document).ready(function () {
 	$(window).scroll(function () {
 		if ($(window).scrollTop() > 300) {
 			btn.addClass('show');
@@ -34,7 +34,7 @@ $(document).ready(function () {
 			scrollTop: 0
 		}, '300');
 	});
-});
+// });
 
     validateMaterializeSelect();
     function validateMaterializeSelect() {
@@ -108,41 +108,10 @@ $(document).ready(function () {
 	wordCounter.init();
 }(jQuery));
 
-$(document).ready(function() {
+// $(document).ready(function() {
     $("input[name='rating']").on("click", function() {
         $(this).prop("checked", true);
-    });
-
-            var url = "https://"+window.location.host+"/rate_review/"+review._id
-            $.post(url,
-                {
-                    rate: rate,
-                },
-                function(data, status){
-                    alert("Data: " + data + "\nStatus: " + status);
-                });
-    // handle form submittion
-    // $("form#ratingForm").submit(function(e) 
-    // {
-        // e.preventDefault(); // prevent the default click action from being performed
-        // if ($("#ratingForm :radio:checked").length == 0) {
-            // $('#status').html("nothing checked");
-            // return false;
-        // } else {
-            // value of selected star rating
-            // var rate = $('input:radio[name=rating]:checked').val() ;
-            // console.log(rate);
-        //    alert("Thanks for your review"); 
-        // }
     // });
-                
-                var url = "http://"+window.location.host+"/rate_review/"+review._id
-            $.post(url,
-                {
-                    rate: rate,
-                },
-                function(data, status){
-                    alert("Data: " + data + "\nStatus: " + status);
-                });
+    
 });
 

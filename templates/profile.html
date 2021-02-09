@@ -74,7 +74,7 @@
                                         {% endif %}
                                     </div>
                                     <div id="status-{{review._id}}">
-                    <form id="ratingForm-{{review._id}}" action="">
+                    <form id="ratingForm-{{review._id}}" action="{{ url_for('rate_review', review_id=review._id) }}" method="POST">
                         <div class="ratings">
                        
                         <fieldset class="rating">

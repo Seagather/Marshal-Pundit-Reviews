@@ -79,10 +79,10 @@
                                 Like</a>
                             {% endif %}
                         </div>
-                        
+                        <div class="ratings"><strong>{{ review.star_ratings }}</strong>
                         <div id="status-{{review._id}}">
-                    <form id="ratingForm-{{review._id}}" action="">
-                        <div class="ratings">
+                    <form id="rating-{{review._id}}" action="{{ url_for('rate_review', review_id=review._id) }}" method="POST">
+                        <!-- <div class="ratings"> -->
                        
                         <fieldset class="rating">
                             <legend>Please rate:</legend>
@@ -94,11 +94,9 @@
                         </fieldset>
                 
                         <div class="clearfix">
-                        <button class="submit clearfix sub">Submit</button>
+                        <button class="submit clearfix sub" name="submit_button">Submit</button>
                         </div>                        
-                       
-                        </div>
-                    </form>
+                    </form></div>
                     </div>
                     </div>
                 </div>                    

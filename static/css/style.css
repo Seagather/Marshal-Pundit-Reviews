@@ -1,128 +1,205 @@
-.text-shadow {
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
+/* -----------------------------------------------Header */
+
 .nav-wrapper {
-    height: 100px !important;
-    line-height: 100px;
+	height: 100px !important;
+	line-height: 100px;
 }
 .nav-item .nav-link:hover {
-    color: #D05F59 !important;
-    background-color:#263238;
+	color: #D05F59 !important;
+	background-color: #263238;
 }
 .nav-link {
-    display: inline;
-    position: relative;
-    font-size: 1.2rem;
+	display: inline;
+	position: relative;
+	font-size: 1.2rem;
 }
 .nav .nav-item {
 	padding: .5rem .5rem;
-    margin: 0 .25rem;
+	margin: 0 .25rem;
 }
 .flashes h4 {
-    line-height: 2;
+	line-height: 2;
 }
 .logo {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 170px;
-    height: 85px;
-    padding-left: 7%;
+	height: 85px;
+	padding-left: 7%;
 }
 .logo >img {
 	width: 100%;
 }
+.text-shadow {
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+/* ---------------------------------------------General Text and Action section*/
+
 .caption {
 	font-family: Georgia;
 	font-weight: normal;
 	font-style: italic;
-    margin: 10px;
-    margin-bottom: 1em;
+	margin: 10px;
+	margin-bottom: 1em;
 	text-shadow: 2px 2px#1b5e20;
-    font-size: 38px;
-    margin-top: 1.5em;
+	font-size: 38px;
+	margin-top: 1.5em;
 }
 .collapsible-header {
-    line-height: 1.9;
+	line-height: 1.9;
 }
-blockquote { 
-    border-style: solid;
-    border-radius: 20px;
-    border-color:#37474f;
-    padding: 25px;
+blockquote {
+	border-style: solid;
+	border-radius: 20px;
+	border-color: #37474f;
+	padding: 25px;
 }
 .datepicker-date-display {
-    background-color:#37474f;
+	background-color: #37474f;
 }
-.datepicker-day-button:focus{
-    color: #ffffff !important;
-    background-color:#37474f;
+.datepicker-day-button:focus {
+	color: #ffffff !important;
+	background-color: #37474f;
 }
-.datepicker-done, .datepicker-cancel, .select-dropdown li>span, .is-today {
-    color: #37474f !important; 
+.datepicker-done,
+.datepicker-cancel,
+.select-dropdown li>span,
+.is-today {
+	color: #37474f !important;
 }
-td.is-selected, .month-prev:active, .month-prev:focus, .month-next:active, .month-next:focus {
-    background-color: #37474f !important;
+td.is-selected,
+.month-prev:active,
+.month-prev:focus,
+.month-next:active,
+.month-next:focus {
+	background-color: #37474f !important;
 }
 td.is-selected.is-today {
-    color: #ffffff !important;
+	color: #ffffff !important;
 }
 .datepicker-calendar-container {
-    color: #000;
+	color: #000;
 }
-
 .btn-small {
-    margin: 5px;
+	margin: 5px;
 }
-
 .collapsible-header .col strong {
-    margin: 5px;
-    line-height: 42px;
+	margin: 5px;
+	line-height: 42px;
 }
 .collapsible-body {
-    background-color: #121315;
-}
-.ratings {
-    display: inline-block;
-    margin-top: 3%;
+	background-color: #121315;
 }
 .fa-exclamation-circle {
-    margin-bottom: 7%;
-    color: red;
-    font-size: 65px !important;
-    text-align: center !important;
+	margin-bottom: 7%;
+	color: red;
+	font-size: 65px !important;
+	text-align: center !important;
 }
 .purchase-link {
-    margin-top: 4%;
+	margin-top: 4%;
 }
-.published-date, .created-by {
-    margin-top: 4%;
+.published-date,
+.created-by {
+	margin-top: 4%;
 }
-.genre, .votes {
-     margin-top: 4%;
+.genre,
+.votes {
+	margin-top: 4%;
 }
 .votes {
-    margin-bottom: 3%;
+	margin-bottom: 3%;
 }
 .text-muted {
-     margin-bottom: 2%;
-     color: #757575;
+	margin-bottom: 2%;
+	color: #757575;
 }
 .up-vote {
-    color: #00c853;
+	color: #00c853;
 }
 .down-vote {
-    color: #f44336;
+	color: #f44336;
 }
 .vote-counts {
-    display: inline;
+	display: inline;
 }
 .book {
-    display: inline;
-    padding-left:2em;
+	display: inline;
+	padding-left: 2em;
 }
-.lever .switch {
+/* .lever .switch {
     padding-left: 10px;
+} */
+
+.profile-image {
+	background-image: url("../images/profile.jpeg");
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	max-width: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
 }
+.profile-card {
+	position: absolute;
+	width: 100%;
+}
+.profile-container {
+	position: relative;
+	width: 100%;
+	overflow-y: auto;
+	max-height: 100vh;
+}
+.img-responsive {
+	max-width: 100%;
+	height: auto;
+}
+::-webkit-scrollbar {
+	width: 0px;
+	/*remove scrollbar space*/
+	background: transparent;
+}
+.to-delete {
+	width: 360px;
+	height: 290px;
+	color: #121315;
+	text-align: center;
+}
+.cover-page {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 5px;
+	width: 240px;
+}
+.cover-page:hover {
+	box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+.review-container {
+	height: 100%;
+	width: 100%;
+	/* font-size: 20; */
+}
+hr {
+	width: 40%;
+}
+.book-details {
+	padding-left: 7% !important;
+	vertical-align: top;
+	/* font-size: 15px; */
+}
+.word-count {
+	text-align: center;
+	color: #bdbdbd;
+}
+/* ---------------------------------------------------Back to top button */
+
 #button {
 	display: inline-block;
 	background-color: #EE6059;
@@ -158,133 +235,138 @@ td.is-selected.is-today {
 	opacity: 1;
 	visibility: visible;
 }
-@media (min-width: 500px) {
-	#button {
-		margin: 20px;
-	}
-}
-.page-footer {
-    color: #fafafa;
-    background: #121315;
-    height: 6rem;
-}
-.profile-image {
-	background-image: url("../images/profile.jpeg");
-	height: 100vh;
-    background-repeat: no-repeat;
-    background-position: center;
-	background-size: cover;
-    position: relative;
-    max-width: 100%;
-    top: 0px;
-    left: 0px;
-    z-index: 1;
-}
-.profile-card {
-    position: absolute;
-    width: 100%;
-}
-.profile-container {
-    position: relative;
-    width: 100%;
-    overflow-y: auto; 
-    max-height: 100vh;
-}
-.img-responsive {
-    max-width: 100%;
-    height: auto;
-}
-::-webkit-scrollbar {
-    width: 0px; /*remove scrollbar space*/
-    background: transparent;
-}
-.to-delete {
-    width: 360px;
-    height: 290px;
-    color: #121315;
-    text-align: center;
-}
+/* -------------------------------------------------------Modal */
+
 .modal-content {
-    color: #121315;
+	color: #121315;
 }
 .modal-footer {
-    text-align: center !important;
-    margin-bottom: 7px;
+	text-align: center !important;
+	margin-bottom: 7px;
 }
 .modal-footer a {
-    margin: 0 15px !important;
-    display: inline-block;
-    float: none;
+	margin: 0 15px !important;
+	display: inline-block;
+	float: none;
+}
+/* -------------------------------------------------------Footer */
+
+.page-footer {
+	color: #fafafa;
+	background: #121315;
+	height: 6rem;
 }
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    /* background-color:#eceff1; */
-    background-color:#000000;
-    color: blanchedalmond;
-  }
-  
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	/* background-color:#eceff1; */
+	background-color: #000000;
+	color: blanchedalmond;
+}
 main {
-    flex: 1 0 auto;
-  }
-.cover-page {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
-    width: 240px;
+	flex: 1 0 auto;
 }
+/* -------------------------------------------------------star-rating */
 
-.cover-page:hover {
-    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+.rating {
+	float: left;
 }
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
 
-* {
-    margin: 0;
-    padding: 0;
+.rating:not(:checked) > input {
+	position: absolute;
+	clip: rect(0px, 0px, 0px, 0px);
 }
+.ratings {
+	display: inline-block;
+	margin-top: 3%;
+}
+.rating:not(:checked) > label {
+	float: right;
+	width: 1.1em;
+	padding: 0.1em;
+	overflow: hidden;
+	white-space: nowrap;
+	cursor: pointer;
+	font-size: 150%;
+	line-height: 1.2;
+	color: #ddd;
+	text-shadow: 1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0, 0, 0, .5);
+}
+.rating:not(:checked) > label:before {
+	content: '★ ';
+}
+.rating > input:checked ~ label {
+	color: #f70;
+	text-shadow: 1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0, 0, 0, .5);
+}
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+	color: gold;
+	text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5);
+}
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+	color: #ea0;
+	text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0, 0, 0, .5);
+}
+.rating > label:active {
+	position: relative;
+	top: 2px;
+	left: 2px;
+}
+/* Clearfix from html5 boilerplate */
 
-.review-container {
-    height: 100%;
-    width: 100%;
-    /* font-size: 20; */
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	/* 1 */
+	display: table;
+	/* 2 */
 }
-hr {
-    width: 40%;  
+.clearfix:after {
+	clear: both;
 }
-/* .cover-img {
-    display: inline-block;
-    vertical-align: top;
-    font-size: 15px;
-    text-align: center;
+/* .clearfix {
+    *zoom: 1;
 } */
-.book-details {
-    padding-left: 7% !important;
-     vertical-align: top;
-     /* font-size: 15px; */
+
+.sub {
+	margin: 20px 0;
+	color: #fff;
+	padding: 3px;
+	cursor: pointer;
+	background-color: #78909c;
+	border-radius: 4px;
 }
-.word-count {
-    text-align: center;
-    color: #bdbdbd;
-}
+/* -------------------------------------------------------Media Queries */
+
 @media (max-width: 992px) {
 	.word-count {
-        font-size: 0.4rem; 
-        margin-top:3%;
+		font-size: 0.4rem;
+		margin-top: 3%;
 	}
 }
 @media (max-width: 992px) {
-	.flash-message, .profile-message {
+	.flash-message,
+	.profile-message {
 		font-size: 1.5rem;
 	}
 }
 @media (max-width: 992px) {
 	.caption {
-        font-size: 1.1rem;
+		font-size: 1.1rem;
 	}
 }
 @media (max-width: 992px) {
-	.book-title, .btn-small {
+	.book-title,
+	.btn-small {
 		font-size: 0.7rem;
 	}
 }
@@ -300,129 +382,27 @@ hr {
 }
 @media (max-width: 992px) {
 	.cover-img {
-        object-position: center;
-        text-align: center;
-        max-width: 100%;
-        display: flex;
+		object-position: center;
+		text-align: center;
+		max-width: 100%;
+		display: flex;
 	}
 }
 @media (max-width: 992px) {
 	.review-container {
-        font-size: 0.7rem;
-        display: inline-block;
-        clear: both;
-        float: none;
-    }
-    
+		font-size: 0.7rem;
+		display: inline-block;
+		clear: both;
+		float: none;
+	}
 }
 @media (max-width: 992px) {
 	hr {
 		width: 95%;
-    }
+	}
 }
-
-.star-rating {
-  line-height:32px;
-  font-size:1.25em;
-  cursor: pointer;
+@media (min-width: 500px) {
+	#button {
+		margin: 20px;
+	}
 }
-.fa-star-o {
-    color: #ffebcd;
-}
-.fa {
-    color: #ffab00;
-}
-
-
-.rating {
-    float:left;
-}
-
-/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
-   follow these rules. Every browser that supports :checked also supports :not(), so
-   it doesn’t make the test unnecessarily selective */
-.rating:not(:checked) > input {
-    position:absolute;
-    /* top:-9999px; */
-    clip:rect(0px, 0px, 0px, 0px);
-}
-
-.rating:not(:checked) > label {
-    float:right;
-    width:1.1em;
-    padding:0.1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:150%;
-    line-height:1.2;
-    color:#ddd;
-    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
-}
-
-.rating:not(:checked) > label:before {
-    content: '★ ';
-}
-
-.rating > input:checked ~ label {
-    color: #f70;
-    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
-}
-
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
-    color: gold;
-    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
-}
-
-.rating > input:checked + label:hover,
-.rating > input:checked + label:hover ~ label,
-.rating > input:checked ~ label:hover,
-.rating > input:checked ~ label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label {
-    color: #ea0;
-    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
-}
-
-.rating > label:active {
-    position:relative;
-    top:2px;
-    left:2px;
-}
-
-/* end of Lea's code */
-
-/*
- * Clearfix from html5 boilerplate
- */
-
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-/*
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-
-/* .clearfix {
-    *zoom: 1;
-} */
-
-/* my stuff */
-.sub {
-    margin: 20px 0;
-    color: #fff;
-    padding: 3px;
-    cursor: pointer;
-    background-color: #78909c;
-    border-radius: 4px;
-}
-
-

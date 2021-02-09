@@ -60,7 +60,7 @@ The skeletal framework of this website was designed using [Balsamiq](https://bal
 
 Links to final version of the wireframe can be found below:
 
-* [Wireframe Final Version](static/wireframes/marshal-pundit-wireframe.pdf)
+* [Wireframe Final Version](wireframes/marshal-pundit-wireframe.pdf)
 
 _<div align="right"><p style="text-align: right"><a href="#top">Back to top</a></p></div>_
 
@@ -72,13 +72,13 @@ MongoDB Atlas was used for this project. A leading NoSQL system in document-orie
 
 The functionality was generally structured to action four types of operations, known collectively by the acronym CRUD, standing for Create, Read, Update, and Delete as shown below:
 
-![dmo](static/images/dmo.png)
+![dmo](diagrams/dmo.png)
 
 ## Database Design
 
 The database integrates four collections, namely: users, genres, reviews and  upvotes as represented in the database schema below:
 
-![schema](static/images/schema.png)
+![schema](diagrams/schema.png)
 
 _<div align="right"><p style="text-align: right"><a href="#top">Back to top</a></p></div>_
 
