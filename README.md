@@ -134,6 +134,10 @@ It allows user to add, edit and delete existing genres. but make it secure to on
 * To make the user authentication more secure, the Log In form integrates werkzeug security features namely: "generate_password_hash" and "check_password_hash".
 Hashing passwords makes it tougher to crack.
 
+#### Regular Expression
+
+* Some sort defensive programming was integrated using Regex to specify what users can type on the input fields.
+
 #### Word Counter
 
 * The reviewers comment input field has a word counter integrated with JavaScript.
@@ -273,7 +277,14 @@ Owners:
 
 ## Bugs
 
-* No known Bugs as at the time of submitting this project.
+### Fixed
+
+* The star rating was working only on the first form initially because the ids of the fields were all the same, so whichever form I click on, the JS will only work on the first form.
+
+* This was rectified by making them unique for every item in the loop to get the clicking events working. 
+I added the **`{{review._id}}`** to any element that has **`id=""`**. That way it's unique on the HTML page for each review in the for-loop.
+
+No known Bugs as at the time of submitting this project.
 
 _<div align="right"><p style="text-align: right"><a href="#top">Back to top</a></p></div>_
 
@@ -283,8 +294,8 @@ _<div align="right"><p style="text-align: right"><a href="#top">Back to top</a><
 
 ## Github
 
-This site was developed on GitPod, using git and GitHub to host the repository.
-We cannot host a Python project on GitHub Pages it only allows us to host static websites..
+This site was developed on GitPod, using git and GitHub to host the repository as we cannot host a Python project on GitHub Page  
+which only allows for static websites.
 Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 
 **Note:** It's important to contained our environment variables within a hidden env.py file which should never be pushed to GitHub by ensuring .gitignore has it secured.
@@ -340,7 +351,7 @@ To inform Heroku on how to run the application and which file runs it the **Proc
 
 # Creating default environment variables
 
-To add any hidden environment variables, or Config Vars, within our App Settings: 
+To add any hidden environment variables, or Config Vars within our App Settings: 
 
 * Selected **Settings** on Heroku dashboard.
 * clicked on **Reveal Config Vars** button.
@@ -363,20 +374,6 @@ To setup Automatic Deployment from GitHub:
 * Once it's done, you'll see "Your App was successfully deployed!!!.
 * Click "**View**" to launch your new app. The deployed site is now available.
 
-## Running Marshal Pundit Reviews Locally
-Cloning Marshal Pundit Reviews from GitHub:
-
-* Navigate to '/Seagather/Marshal-Pundit-Reviews'.
-* Click the green 'Clone or Download' button.
-* Copy the url in the dropdown box.
-* Open up your preferred terminal on any IDE of your choice. 
-* Navigate to your desired file location.
-* Copy the following code and paste to your terminal to clone Marshal Travel Agency.
-
-```
- git clone https://github.com/Seagather/Marshal-Pundit-Reviews.git 
-
-```
 _<div align="right"><p style="text-align: right"><a href="#top">Back to top</a></p></div>_
 
 
@@ -396,6 +393,6 @@ Code was modified to better fit my needs.
 
 ## Acknowledgements
 * Special thanks to [Felipe Alarcon](https://github.com/felipe-alarcon), I appreciate more than you' ll ever know
-* Most sincere appreciation to my fellow students and Support team at Code Institute for their immeasurable feedback.
+* Most sincere appreciation to my fellow students, Slack Community and Support team at Code Institute for their immeasurable feedback.
 
 _<div align="right"><p style="text-align: right"><a href="#top">Back to top</a></p></div>_

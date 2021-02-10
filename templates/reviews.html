@@ -82,7 +82,6 @@
                         <div class="ratings"><strong>{{ review.star_ratings }}</strong>
                         <div id="status-{{review._id}}">
                     <form id="rating-{{review._id}}" action="{{ url_for('rate_review', review_id=review._id) }}" method="POST">
-                        <!-- <div class="ratings"> -->
                        
                         <fieldset class="rating">
                             <legend>Please rate:</legend>
