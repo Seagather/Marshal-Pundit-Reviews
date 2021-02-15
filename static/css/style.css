@@ -333,9 +333,6 @@ main {
 .clearfix:after {
 	clear: both;
 }
-/* .clearfix {
-    *zoom: 1;
-} */
 
 .sub {
 	margin: 20px 0;

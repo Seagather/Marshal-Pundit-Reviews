@@ -30,7 +30,8 @@ _<div align="right"><p style="text-align: right"><a href="#top">Back to top</a><
 
 ## UX Design
 
-The color scheme used in this project is a deviation from the basic "Achromatic" use of a white background with black text in web design yet the motifs were simply structured to be aesthetic and user friendly. All sections are arranged in a logical order to provide intuitive user experience.
+The color scheme used in this project is a deviation from the basic "Achromatic" use of a white background with black text in web design yet the motifs were simply structured to be aesthetic and user friendly.
+All sections are arranged in a logical order. To provide intuitive user experience, the interfaces were styled using the Materialize framework as a frontend.
 
 The following colors were used: blanchedalmond (`#ffebcd`), range of blue-grey (`#263238`, `#37474f`, `#78909c`), grey lighten-5 (`#fafafa`), amber accent-4 (`#ffab00`), green accent-4 (`#00c853`), red lighten-1 (`#ef5350`), moderate red (`#D05F59`), white (`#ffffff`), black (`#000000`) and very dark (`#121315`).
 
@@ -68,7 +69,8 @@ _<div align="right"><p style="text-align: right"><a href="#top">Back to top</a><
 
 # Database
 
-MongoDB Atlas was used for this project. A leading NoSQL system in document-oriented cloud database.
+MongoDB Atlas was used for this project. A leading NoSQL system in document-oriented cloud database,
+useful for storing large amounts of unstructured data.
 
 The functionality was generally structured to action four types of operations, known collectively by the acronym CRUD, standing for Create, Read, Update, and Delete as shown below:
 

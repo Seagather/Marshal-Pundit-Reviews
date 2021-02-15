@@ -117,14 +117,3 @@ $(document).ready(function () {
 $("input[name='rating']").on("click", function () {
 	$(this).prop("checked", true);
 });
-
-$.ajax({
-      type: 'POST',
-      url: "/rate_review",
-      data: {book_name:book_name,rating:value},
-      dataType: "text",
-      success: function(data){
-                 alert("rating added");
-               }
-    });
-
