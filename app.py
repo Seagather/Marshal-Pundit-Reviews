@@ -228,7 +228,7 @@ def upvote(review_id):
             return redirect(url_for("get_reviews"))
 
 
-@ app.route("/rate_review/<review_id>", methods=["POST"])
+@ app.route("/rate_review/<review_id>", methods=["GET", "POST"])
 def rate_review(review_id):
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
 

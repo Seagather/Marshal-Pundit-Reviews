@@ -147,6 +147,8 @@ The counter display while typing to inform and limit users within the context of
 
 * Add social media links to generate traffic.
 * Recover username and password option
+* Functionality for theme switch. This will enable users switch from dark to bright background.
+* Add google Image API functionality to enable users link Cover Images automatically. 
 
 _<div align="right"><p style="text-align: right"><a href="#top">Back to top</a></p></div>_
 
@@ -393,6 +395,7 @@ Code was modified to better fit my needs.
 
 ## Acknowledgements
 * Special thanks to [Felipe Alarcon](https://github.com/felipe-alarcon), I appreciate more than you' ll ever know
+* Thanks most of all to my beautiful wife, Yvonne, for her unending patience while I code all night for months.
 * Most sincere appreciation to my fellow students, Slack Community and Support team at Code Institute for their immeasurable feedback.
 
 _<div align="right"><p style="text-align: right"><a href="#top">Back to top</a></p></div>_

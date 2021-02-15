@@ -25,18 +25,17 @@
                     {% endif %}
                     </div>
                     <!-- Modal Structure -->
-                <div id="{{genre._id}}" class="modal to-delete center-align">
-                <div class="modal-content center-align">
-                 <i class="fas fa-exclamation-circle fa-5x"></i>
-                <h4 class="modal-text">Are you sure ?</h4>
-                <p>You won't be able to revert this!</p>
-                </div>
-                <div class="modal-footer">
-                <a href="{{ url_for('delete_genre', genre_id=genre._id) }}" class="modal-close btn-small red lighten-1">Delete</a>
-                <a href="#!" class="modal-close btn-small blue-grey lighten-1">Cancel</a>
-   
-                </div>
-                </div>
+                    <div id="{{genre._id}}" class="modal to-delete center-align">
+                        <div class="modal-content center-align">
+                            <i class="fas fa-exclamation-circle fa-5x"></i>
+                            <h4 class="modal-text">Are you sure ?</h4>
+                            <p>You won't be able to revert this!</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="{{ url_for('delete_genre', genre_id=genre._id) }}" class="modal-close btn-small red lighten-1">Delete</a>
+                            <a href="#!" class="modal-close btn-small blue-grey lighten-1">Cancel</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         {% endfor %}
